@@ -82,7 +82,7 @@ export default async function Index() {
             The fastest way to start building apps with{" "}
             <strong>Supabase</strong> and <strong>Next.js</strong>
           </p>
-          <div className="bg-foreground py-8 px-12 rounded-lg text-sm text-background">
+          <div className="bg-perano-200 py-4 px-6 rounded-lg text-sm text-perano-800">
             Get started by editing <strong>app/page.tsx</strong>
           </div>
         </div>
