@@ -1,7 +1,4 @@
-import Image from 'next/image';
 import Link from 'next/link';
-
-import welcomeImage from '../public/2022trophy.jpeg';
 
 export const dynamic = 'force-dynamic';
 
@@ -28,35 +25,27 @@ const resources = [
 
 export default async function Index() {
   return (
-    <div className='w-full flex flex-col items-center'>
-      <div className='animate-in flex flex-col gap-14 opacity-0 max-w-4xl px-3 py-16 lg:py-24 text-foreground'>
-        <div className='flex flex-col items-center lg:mb-2'>
-          <h2 className='text-3xl font-bold'>The Milkshake Cup</h2>
+    <div className='w-full'>
+      <div className='animate-in opacity-0 max-w-4xl mx-auto px-3 py-8 lg:py-16 text-foreground'>
+        <div className='lg:mb-2 text-center'>
+          <h2 className='text-3xl mb-8 font-bold'>The Milkshake Cup</h2>
         </div>
 
-        <div className='w-full p-[1px] bg-gradient-to-r from-transparent via-foreground/10 to-transparent' />
+        <div className='w-full p-[1px] mb-10 bg-gradient-to-r from-transparent via-foreground/10 to-transparent' />
 
-        <div className='flex flex-row justify-between gap-12'>
-          <div className='basis-3/5'>
-            <h4 className='mb-4'>DEFENDING CHAMPION&apos;S WELCOME</h4>
-            <p className='mb-4'>
-              As he declined his invitation to this year&apos;s Milkshake Cup,
-              Tiger wistfully said to me, &quot;There&apos;s no sense in going
-              to a tournament if you don&apos;t believe that you can win
-              it.&quot;
-            </p>
-            <p className='mb-4'>Do you have what it takes?</p>
-            <p>See you in Leeds!</p>
-          </div>
-
-          <Image
-            src={welcomeImage}
-            alt='Engraved trophy 2022'
-            width={300}
-            height={400}
-            className='basis-2/5'
-            priority
-          />
+        <div className='mx-auto mb-12 max-w-2xl'>
+          <h4 className='mb-4 text-center'>
+            DEFENDING CHAMPION&apos;S WELCOME
+          </h4>
+          <p className='mb-4 text-2xl text-center'>
+            As he declined his invitation to this year&apos;s Milkshake Cup,
+            Tiger wistfully said to me, &quot;There&apos;s no sense in going to
+            a tournament if you don&apos;t believe that you can win it.&quot;
+          </p>
+          <p className='mb-4 text-2xl text-center'>
+            Do you have what it takes?
+          </p>
+          <p className='mb-4 text-2xl text-center'>See you in Leeds!</p>
         </div>
 
         <div className='flex flex-col gap-8 text-foreground'>
