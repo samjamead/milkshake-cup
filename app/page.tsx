@@ -45,7 +45,7 @@ export default async function Index() {
               <p className='mb-4 text-xl '>Do you have what it takes?</p>
               <p className='mb-4 lg:mb-0 text-xl '>See you in Leeds!</p>
             </div>
-            <h4 className='font-bold text-right lg:text-left'>
+            <h4 className='font-bold text-right '>
               &mdash;Alan Mead, 2022 Champion
             </h4>
           </div>
