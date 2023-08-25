@@ -3,6 +3,8 @@ import './main.css';
 
 import Header from '@/components/Header';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   title: 'The Milkshake Cup',
   description: 'The Village, Leeds, Saturday 2nd September 2023',
