@@ -8,8 +8,8 @@ export const dynamic = 'force-dynamic';
 function Logo({ className }: { className: string }) {
   return (
     <svg
-      width='65'
-      height='39'
+      width='55'
+      height='33'
       viewBox='0 0 650 389'
       xmlns='http://www.w3.org/2000/svg'
       className={className}
@@ -36,7 +36,7 @@ export default async function Header() {
       <div className='w-full max-w-4xl flex justify-between items-center p-3 text-sm text-foreground'>
         <div>
           <Link href='/'>
-            <Logo className='something' />
+            <Logo className='logo' />
           </Link>
         </div>
         <div>

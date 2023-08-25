@@ -1,4 +1,7 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import champ from '../public/champ.jpeg';
+import champHover from '../public/champHover.jpeg';
 
 export const dynamic = 'force-dynamic';
 
@@ -26,78 +29,88 @@ const resources = [
 export default async function Index() {
   return (
     <div className='w-full'>
-      <div className='animate-in opacity-0 max-w-4xl mx-auto px-3 py-8 lg:py-16 text-foreground'>
-        <div className='lg:mb-2 text-center'>
-          <h2 className='text-3xl mb-8 font-bold'>The Milkshake Cup</h2>
-        </div>
-
-        <div className='w-full p-[1px] mb-10 bg-gradient-to-r from-transparent via-foreground/10 to-transparent' />
-
-        <div className='mx-auto mb-12 max-w-2xl'>
-          <h4 className='mb-4 text-center'>
-            DEFENDING CHAMPION&apos;S WELCOME
-          </h4>
-          <p className='mb-4 text-2xl text-center'>
-            As he declined his invitation to this year&apos;s Milkshake Cup,
-            Tiger wistfully said to me, &quot;There&apos;s no sense in going to
-            a tournament if you don&apos;t believe that you can win it.&quot;
-          </p>
-          <p className='mb-4 text-2xl text-center'>
-            Do you have what it takes?
-          </p>
-          <p className='mb-4 text-2xl text-center'>See you in Leeds!</p>
-        </div>
-
-        <div className='flex flex-col gap-8 text-foreground'>
-          <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
-            {resources.map(({ title, subtitle, url, icon }) => (
-              <Link
-                key={title}
-                className='relative flex flex-col group rounded-lg border p-6'
-                href={url}
-              >
-                <h3 className='font-bold mb-2  min-h-[40px] lg:min-h-[60px]'>
-                  {title}
-                </h3>
-                <div className='flex flex-col grow gap-4 justify-between'>
-                  <p className='text-sm opacity-70'>{subtitle}</p>
-                  <div className='flex justify-between items-center'>
-                    <svg
-                      width='24'
-                      height='24'
-                      viewBox='0 0 24 24'
-                      fill='none'
-                      xmlns='http://www.w3.org/2000/svg'
-                      className='opacity-80 group-hover:opacity-100'
-                    >
-                      <path
-                        d={icon}
-                        stroke='currentColor'
-                        strokeWidth='2'
-                        strokeLinecap='round'
-                        strokeLinejoin='round'
-                      />
-                    </svg>
-
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      width='24'
-                      height='24'
-                      viewBox='0 0 24 24'
-                      fill='none'
-                      stroke='currentColor'
-                      strokeWidth='2'
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      className='ml-2 h-4 w-4 opacity-0 -translate-x-2 group-hover:translate-x-0 group-hover:opacity-100 transition-all'
-                    >
-                      <polyline points='9 18 15 12 9 6' />
-                    </svg>
-                  </div>
-                </div>
-              </Link>
-            ))}
+      <div className='animate-in opacity-0 max-w-4xl mx-auto px-3 py-4 lg:py-12 text-foreground'>
+        <div className='bg-[color:var(--card-bg)] border border-yellow-200 rounded-xl p-4 lg:p-8 mb-8 flex flex-col lg:flex-row justify-between items-stretch gap-12 group'>
+          <div className='shrink flex flex-col justify-between text-background'>
+            <h4 className='font-bold mb-4 lg:mb-0'>
+              DEFENDING CHAMPION&apos;S WELCOME
+            </h4>
+            <div>
+              <p className='mb-4 text-xl'>
+                As he declined his invitation to this year&apos;s Milkshake Cup,
+                Tiger wistfully said to me, &quot;There&apos;s no sense in going
+                to a tournament if you don&apos;t believe that you can win
+                it.&quot;
+              </p>
+              <p className='mb-4 text-xl '>Do you have what it takes?</p>
+              <p className='mb-4 lg:mb-0 text-xl '>See you in Leeds!</p>
+            </div>
+            <h4 className='font-bold text-right lg:text-left'>
+              &mdash;Alan Mead, 2022 Champion
+            </h4>
           </div>
+
+          <div className='w-[100%] lg:w-[250px] flex-shrink-0 relative'>
+            <Image
+              src={champ}
+              alt='2022 Champion Alan Mead'
+              width={250}
+              height={333}
+              className='rounded-lg w-[100%]'
+            />
+            <Image
+              src={champHover}
+              alt='2022 Champion Alan Mead'
+              width={250}
+              height={333}
+              className=' absolute top-0 w-[100%] rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300'
+            />
+          </div>
+        </div>
+
+        <div className='flex flex-col lg:flex-row justify-between gap-4'>
+          {resources.map(({ title, url, icon }) => (
+            <Link
+              key={title}
+              className='relative flex flex-row justify-between gap-6 items-center group rounded-lg border p-6'
+              href={url}
+            >
+              <svg
+                width='24'
+                height='24'
+                viewBox='0 0 24 24'
+                fill='none'
+                xmlns='http://www.w3.org/2000/svg'
+                className='opacity-80 group-hover:opacity-100'
+              >
+                <path
+                  d={icon}
+                  stroke='currentColor'
+                  strokeWidth='2'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                />
+              </svg>
+              <div className='grow'>
+                <h3 className='font-bold'>{title}</h3>
+              </div>
+
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                width='24'
+                height='24'
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='currentColor'
+                strokeWidth='2'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                className='ml-2 h-4 w-4 opacity-0 -translate-x-2 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300'
+              >
+                <polyline points='9 18 15 12 9 6' />
+              </svg>
+            </Link>
+          ))}
         </div>
       </div>
     </div>
