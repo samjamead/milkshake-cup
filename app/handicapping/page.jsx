@@ -7,7 +7,7 @@ export default function Index() {
   const supabase = createClientComponentClient();
 
   const [rawProfiles, setRawProfiles] = useState([]);
-  const [slopeRating, setSlopeRating] = useState(99);
+  const [slopeRating, setSlopeRating] = useState(89);
   const [error, setError] = useState(null);
 
   const profiles = useMemo(() => {
