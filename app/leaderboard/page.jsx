@@ -1,38 +1,35 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 
 export default function Index() {
   const supabase = createClientComponentClient();
-
-  const [rawProfiles, setRawProfiles] = useState([]);
-  const [slopeRating, setSlopeRating] = useState(99);
+  const [profiles, setProfiles] = useState([]);
   const [error, setError] = useState(null);
 
-  const profiles = useMemo(() => {
-    return rawProfiles.map((player) => {
-      let course_handicap = (slopeRating / 113) * player.handicap;
-      let playing_handicap = 0.95 * course_handicap;
-      return {
-        ...player,
-        course_handicap,
-        playing_handicap,
-      };
-    });
-  }, [rawProfiles, slopeRating]);
+  const calculatePlayingHandicap = (handicap) => {
+    return Math.round((89 / 113) * handicap * 0.95);
+  };
 
   const fetchData = async () => {
-    let { data, error } = await supabase.from('profiles').select();
+    const { data, error: fetchError } = await supabase
+      .from('profiles')
+      .select();
 
-    if (error) {
+    if (fetchError) {
       setError('Failed to fetch data. Please try again later.');
-      console.error(error);
+      console.error(fetchError);
       return;
     }
 
     if (data) {
-      setRawProfiles(data.sort((a, b) => a.handicap - b.handicap));
+      const playerData = data.map((player) => ({
+        ...player,
+        playing_handicap: calculatePlayingHandicap(player.handicap),
+      }));
+
+      setProfiles(playerData.sort((a, b) => a.handicap - b.handicap));
     }
   };
 
@@ -40,54 +37,38 @@ export default function Index() {
     fetchData();
   }, []);
 
-  function handleSliderChange(e) {
-    e.preventDefault();
-    setSlopeRating(e.target.value);
-  }
-
   return (
     <div className='w-full'>
       <div className='animate-in opacity-0 max-w-4xl mx-auto px-3 py-8 lg:py-12 text-foreground'>
         <h1 className='text-3xl font-bold mb-8'>2023 Leaderboard</h1>
-        <h2 className='text-xl font-bold mb-4'>Handicaps</h2>
-
         {error && <div className='text-red-500 mb-4'>{error}</div>}
-
-        <p className='mb-4'>
-          Course handicap = (slope rating / 113) x handicap index
-        </p>
-        <p className='mb-4'>Playing handicap = course handicap x 0.95</p>
-        <p className='mb-4'>
-          Odd playing handicaps get the extra shot in round 1
-        </p>
-        <div className='flex flex-row items-center gap-4 mb-4'>
-          <label htmlFor='rating-slider' className='inline'>
-            The Village Course rating:
-          </label>
-          <input
-            type='range'
-            id='rating-slider'
-            defaultValue={99}
-            min={90}
-            max={113}
-            onChange={handleSliderChange}
-            aria-label='Slope Rating Slider'
-          />
-          <span>{slopeRating}</span>
-        </div>
-
-        <ol className='list-decimal pl-8'>
-          {profiles.map(
-            ({ name, handicap, course_handicap, playing_handicap }) => (
-              <li key={name}>
-                {name} ({handicap.toFixed(1)}) &rarr;{' '}
-                {course_handicap?.toFixed(1)} &rarr;{' '}
-                {playing_handicap?.toFixed(1)} &rarr;{' '}
-                {Math.round(playing_handicap)}
-              </li>
-            )
-          )}
-        </ol>
+        <table className='table-auto mb-12'>
+          <thead>
+            <tr className='border-b'>
+              <th className='px-4 py-2 text-right'></th>
+              <th className='px-4 py-2 text-right'></th>
+              <th className='pr-2 py-2 text-right'></th>
+              <th className='px-4 py-2 text-right'>Rd. 1</th>
+              <th className='px-4 py-2 text-right'>Rd. 2</th>
+              <th className='px-4 py-2 text-right'>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {profiles &&
+              profiles.map(({ name, playing_handicap }, index) => (
+                <tr className='even:bg-foreground/10' key={name}>
+                  <td className='px-4 py-2 text-right'>{index + 1}.</td>
+                  <td className='px-4 py-2 text-left'>{name}</td>
+                  <td className='pr-2 py-2 text-right text-sm'>
+                    ({playing_handicap})
+                  </td>
+                  <td className='px-4 py-2 text-right'>--</td>
+                  <td className='px-4 py-2 text-right'>--</td>
+                  <td className='px-4 py-2 text-right'>--</td>
+                </tr>
+              ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

@@ -53,14 +53,14 @@ export default function Index() {
         {error && <div className='text-red-500 mb-4'>{error}</div>}
 
         <p className='mb-4'>
-          Course handicap ={' '}
-          <span className='font-mono text-sm ml-4 px-2 py-1 rounded-md bg-foreground/20'>
+          Course handicap = <br className='md:hidden' />{' '}
+          <span className='font-mono text-xs md:text-sm ml-1 px-2 py-1 rounded-md bg-foreground/20'>
             handicap index x (slope rating / 113)
           </span>
         </p>
         <p className='mb-8'>
-          Playing handicap ={' '}
-          <span className='font-mono text-sm ml-4 px-2 py-1 rounded-md bg-foreground/20'>
+          Playing handicap =<br className='md:hidden' />{' '}
+          <span className='font-mono text-xs md:text-sm ml-1 px-2 py-1 rounded-md bg-foreground/20'>
             course handicap x 0.95
           </span>
         </p>
@@ -70,11 +70,22 @@ export default function Index() {
         </p>
 
         <ul className='list-disc pl-6 mb-4'>
-          <li className='pl-4'>The average golf course is 113</li>
+          <li className='pl-4'>Average course is 113</li>
           <li className='pl-4'>Kirkbymoorside off yellows is 121</li>
           <li className='pl-4'>RND off yellows is 128</li>
           <li className='pl-4'>RND off juniors is 104</li>
         </ul>
+
+        <p className='mb-4'>
+          With a slope rating of 99 Alan would have 20 shots; I don&apos;t think
+          we can allow a defending champ more than one shot per hole. So to get
+          Alan down to 18 and scale everyone else off of that we could edit the
+          slope rating down to 89.
+        </p>
+        <p className='mb-8'>
+          Giving Ali and Pin handicap indexes of 40 brings them down to playing
+          off 30 and means that if they break 100 (gross) they&apos;ll win 👏
+        </p>
 
         <div className='flex flex-row items-center gap-4 mb-4'>
           <label htmlFor='rating-slider' className='inline'>
@@ -83,8 +94,8 @@ export default function Index() {
           <input
             type='range'
             id='rating-slider'
-            defaultValue={99}
-            min={90}
+            defaultValue={89}
+            min={75}
             max={113}
             onChange={handleSliderChange}
             aria-label='Slope Rating Slider'
@@ -92,32 +103,29 @@ export default function Index() {
           <span>{slopeRating}</span>
         </div>
 
-        <table className='table-auto'>
+        <table className='table-auto mb-12'>
           <thead>
             <tr className='border-b'>
-              <th className='px-4 text-left'></th>
-              <th className='px-4 text-right'>Index</th>
+              <th className='px-4 py-1 text-left'></th>
+              <th className='px-4 py-1 text-right'>Index</th>
 
-              <th className='px-4 text-right'>Course Handicap</th>
+              <th className='px-4 py-1 text-right'>Course</th>
 
-              <th className='px-4 text-right'>Playing Handicap</th>
-
-              <th className='px-4 text-right'>Rounded</th>
+              <th className='px-4 py-1 text-right'>Playing</th>
             </tr>
           </thead>
           <tbody>
             {profiles.map(
               ({ name, handicap, course_handicap, playing_handicap }) => (
                 <tr className='even:bg-foreground/10' key={name}>
-                  <td className='px-4 text-left'>{name}</td>
-                  <td className='px-4 text-right'>{handicap.toFixed(1)}</td>
-                  <td className='px-4 text-right'>
+                  <td className='px-4 py-1 text-left'>{name}</td>
+                  <td className='px-4 py-1 text-right'>
+                    {handicap.toFixed(1)}
+                  </td>
+                  <td className='px-4 py-1 text-right'>
                     {course_handicap?.toFixed(1)}
                   </td>
-                  <td className='px-4 text-right'>
-                    {playing_handicap?.toFixed(1)}
-                  </td>
-                  <td className='px-4 text-right'>
+                  <td className='px-4 py-1 text-right'>
                     {Math.round(playing_handicap)}
                   </td>
                 </tr>
