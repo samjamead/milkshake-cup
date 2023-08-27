@@ -1,7 +1,8 @@
-import './globals.css';
 import './main.css';
+import './globals.css';
 
 import Header from '@/components/Header';
+import Resources from '@/components/Resources';
 
 export const dynamic = 'force-dynamic';
 
@@ -19,8 +20,14 @@ export default function RootLayout({
     <html lang='en'>
       <body className='bg-background'>
         <Header />
-        <main className='min-h-screen bg-background flex flex-col items-center'>
+        <main className='bg-background'>
           {children}
+
+          <div className='w-full'>
+            <div className='animate-in opacity-0 max-w-4xl mx-auto px-3 text-foreground'>
+              <Resources />
+            </div>
+          </div>
         </main>
       </body>
     </html>

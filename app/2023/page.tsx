@@ -1,18 +1,16 @@
 export default async function Index() {
   return (
-    <div className='w-full flex flex-col items-center'>
-      <div className='animate-in flex flex-col gap-14 opacity-0 max-w-4xl px-3 py-16 lg:py-24 text-foreground'>
-        <div className='flex flex-col items-center lg:mb-2'>
-          <h1 className='text-3xl font-bold'>2023 Itinerary</h1>
-        </div>
+    <div className='w-full'>
+      <div className='animate-in opacity-0 max-w-4xl mx-auto px-3 py-8 lg:py-16 text-foreground'>
+        <h1 className='text-3xl font-bold mb-8 lg:mb-16'>2023 Itinerary</h1>
 
-        <div className='w-full p-[1px] bg-gradient-to-r from-transparent via-foreground/10 to-transparent' />
+        <div className='mb-8 lg:mb-12'>
+          <h2 className='mb-4 lg:mb-8 p-4 rounded-lg bg-brand-alt-300'>
+            Friday September 1st
+          </h2>
 
-        <div className='lg:mb-12'>
-          <h2>Day 1 - Friday September 1st</h2>
-
-          <h2>Kirkbymoorside Golf Club Charity event</h2>
-          <address>
+          <h2 className='mb-4'>Kirkbymoorside Golf Club Charity event</h2>
+          <address className='mb-4'>
             Kirkbymoorside Golf Course,
             <br />
             Manor Vale, Kirkbymoorside,
@@ -21,7 +19,7 @@ export default async function Index() {
           </address>
 
           <h3>Teams and Tee Times</h3>
-          <ul>
+          <ul className='mb-4'>
             <li>
               <strong>Team Cream First</strong> - Tee time 14:00: Josh, Harry,
               Alan, Ali.
@@ -37,8 +35,10 @@ export default async function Index() {
             to count on the 18th.
           </p>
 
-          <h2>Dinner Location</h2>
-          <address>
+          <div className='w-full p-[1px] my-4 lg:my-8 bg-gradient-to-r from-foreground/10 to-transparent' />
+
+          <h2 className='mb-4'>Dinner Location</h2>
+          <address className='mb-4'>
             Mike and Sue Clements&apos; house
             <br />
             The Struan, Old Road,
@@ -50,14 +50,16 @@ export default async function Index() {
             Sue Clements.
           </p>
 
-          <h2>Accommodation</h2>
-          <address>
+          <div className='w-full p-[1px] my-4 lg:my-8 bg-gradient-to-r from-foreground/10 to-transparent' />
+
+          <h2 className='mb-4'>Accommodation</h2>
+          <address className='mb-4'>
             The George & Dragon Hotel,
             <br />
             17 Market Place, Kirkbymoorside YO62 6AA
           </address>
-          <p>Just a short walk from Mike & Sue&apos;s.</p>
-          <ul>
+          <p className='mb-4'>Just a short walk from Mike & Sue&apos;s.</p>
+          <ul className='mb-4'>
             <li>Triple Room - Harry, Ali, Josh.</li>
             <li>Double Room - Alan & Jamie.</li>
             <li>B&B - £49 each.</li>
@@ -65,48 +67,57 @@ export default async function Index() {
 
           <p>Sam & Pin staying with Mike & Sue.</p>
         </div>
-        <div className='lg:mb-12'>
-          <h2>Day 2 - Saturday September 2nd</h2>
 
-          <h2>The 2023 Milkshake Cup</h2>
-          <address>
+        <div className='lg:mb-12'>
+          <h2 className='mb-4 lg:mb-8 p-4 rounded-lg bg-brand-alt-300'>
+            Saturday September 2nd
+          </h2>
+
+          <h2 className='mb-4'>The 2023 Milkshake Cup</h2>
+          <address className='mb-4'>
             The Village Golf Course Backstonegill Lane,
             <br />
             Wike LS17 9JS
           </address>
-          <p>
-            First round tees off at 11:00 - two rounds, stroke play. Winner
-            takes it all.
-            <br />
+          <p className='mb-4 font-bold'>
             Meet at The George &amp; Dragon at 09:15.
           </p>
+          <p className='mb-4'>
+            First round tees off at 11:00 - two rounds, stroke play (net).
+            Winner takes it all.
+          </p>
 
-          <h2>Awards Dinner</h2>
-          <address>
+          <div className='w-full p-[1px] my-4 lg:my-8 bg-gradient-to-r from-foreground/10 to-transparent' />
+
+          <h2 className='mb-4'>Awards Dinner</h2>
+          <address className='mb-4'>
             The Olive Branch,
             <br />
             139 Street Lane, Roundhay, Leeds LS8 1AA
           </address>
-          <p>
+          <p className='mb-4'>
             Full veg and GF options available as personally checked and
             inspected by T. Clements Esq.
-            <br />
-            Table booked for 18:15 so the whole Clements fam can join us, then
-            all back to Tom&apos;s for a bevvy or two -<br />
-            42 Chelwood Crescent, Leeds LS8 2AQ
+          </p>
+          <p className='mb-4'>
+            <strong>Table booked for 18:15</strong> so the whole Clements fam
+            can join us, then all back to Tom&apos;s for a bevvy or two &mdash;{' '}
+            <span className='italic'>42 Chelwood Crescent, Leeds LS8 2AQ</span>
           </p>
 
-          <h2>Accommodation</h2>
-          <address>
+          <div className='w-full p-[1px] my-4 lg:my-8 bg-gradient-to-r from-foreground/10 to-transparent' />
+
+          <h2 className='mb-4'>Accommodation</h2>
+          <address className='mb-4'>
             Hinsley Hall
             <br />
             62 Headingly Lane, Leeds, LS6 2BX
           </address>
-          <p>
+          <p className='mb-4'>
             We&rsquo;ll get cabs to the restaurant and then back from
             Tom&rsquo;s.
           </p>
-          <ul>
+          <ul className='mb-4'>
             <li>Twin room with adjoining private bathroom - Sam and Pin.</li>
             <li>
               Two twin rooms with a shared adjoining private bathroom - Jamie,
@@ -116,28 +127,32 @@ export default async function Index() {
             <li>B & B - £39 each.</li>
           </ul>
         </div>
-        <div>
-          <h2>Day 3 - Sunday September 3rd</h2>
+        <div className='mb-8 lg:mb-16'>
+          <h2 className='mb-4 lg:mb-8 p-4 rounded-lg bg-brand-alt-300'>
+            Day 3 - Sunday September 3rd
+          </h2>
 
-          <h2>The Milkshake Cup Travelling Golf Society</h2>
-          <address>
+          <h2 className='mb-4'>The Milkshake Cup Travelling Golf Society</h2>
+          <address className='mb-4'>
             Howley Hall Golf Club Scotchman Lane,
             <br />
             Morley, Leeds LS27 0NX
           </address>
-          <p>
+          <p className='mb-4'>
             Tee times 09:50 and 10:00 - £40 per person.
             <br />
             35-40 mins travel time.
           </p>
 
-          <h2>Lunch Venue</h2>
-          <address>
+          <div className='w-full p-[1px] my-4 lg:my-8 bg-gradient-to-r from-foreground/10 to-transparent' />
+
+          <h2 className='mb-4'>Lunch Venue</h2>
+          <address className='mb-4'>
             The Greedy Duck pub,
             <br />
             Scotchman Lane, Morley, West Yorkshire, LS27 0NZ
           </address>
-          <p>3 mins from the course.</p>
+          <p className='mb-4'>3 mins from the course.</p>
         </div>
       </div>
     </div>
