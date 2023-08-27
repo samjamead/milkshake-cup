@@ -45,9 +45,9 @@ export default function Index() {
         <table className='table-auto mb-12'>
           <thead>
             <tr className='border-b'>
-              <th className='px-4 py-2 text-right'></th>
-              <th className='px-4 py-2 text-right'></th>
-              <th className='pr-2 py-2 text-right'></th>
+              <th className='pr-4 py-2 text-right'></th>
+              <th className='pl-4 py-2 text-right'></th>
+              <th className='px-2 py-2 text-right'></th>
               <th className='px-4 py-2 text-right'>Rd. 1</th>
               <th className='px-4 py-2 text-right'>Rd. 2</th>
               <th className='px-4 py-2 text-right'>Total</th>
@@ -57,9 +57,9 @@ export default function Index() {
             {profiles &&
               profiles.map(({ name, playing_handicap }, index) => (
                 <tr className='even:bg-foreground/10' key={name}>
-                  <td className='px-4 py-2 text-right'>{index + 1}.</td>
-                  <td className='px-4 py-2 text-left'>{name}</td>
-                  <td className='pr-2 py-2 text-right text-sm'>
+                  <td className='pr-4 py-2 text-right'>{index + 1}.</td>
+                  <td className='pl-4 py-2 text-left'>{name}</td>
+                  <td className='px-2 py-2 text-right text-sm'>
                     ({playing_handicap})
                   </td>
                   <td className='px-4 py-2 text-right'>--</td>
