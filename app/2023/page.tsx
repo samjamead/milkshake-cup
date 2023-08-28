@@ -5,7 +5,7 @@ export default async function Index() {
         <h1 className='text-3xl font-bold mb-8 lg:mb-16'>2023 Itinerary</h1>
 
         <div className='mb-8 lg:mb-12'>
-          <h2 className='mb-4 lg:mb-8 p-4 rounded-lg bg-brand-alt-300'>
+          <h2 className='mb-4 lg:mb-8 p-4 text-background rounded-lg bg-brand-alt-300'>
             Friday September 1st
           </h2>
 
@@ -69,7 +69,7 @@ export default async function Index() {
         </div>
 
         <div className='lg:mb-12'>
-          <h2 className='mb-4 lg:mb-8 p-4 rounded-lg bg-brand-alt-300'>
+          <h2 className='mb-4 lg:mb-8 p-4 text-background rounded-lg bg-brand-alt-300'>
             Saturday September 2nd
           </h2>
 
@@ -128,7 +128,7 @@ export default async function Index() {
           </ul>
         </div>
         <div className='mb-8 lg:mb-16'>
-          <h2 className='mb-4 lg:mb-8 p-4 rounded-lg bg-brand-alt-300'>
+          <h2 className='mb-4 lg:mb-8 p-4 text-background rounded-lg bg-brand-alt-300'>
             Sunday September 3rd
           </h2>
 
