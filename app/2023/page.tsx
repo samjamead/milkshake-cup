@@ -129,7 +129,7 @@ export default async function Index() {
         </div>
         <div className='mb-8 lg:mb-16'>
           <h2 className='mb-4 lg:mb-8 p-4 rounded-lg bg-brand-alt-300'>
-            Day 3 - Sunday September 3rd
+            Sunday September 3rd
           </h2>
 
           <h2 className='mb-4'>The Milkshake Cup Travelling Golf Society</h2>

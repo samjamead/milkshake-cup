@@ -48,15 +48,15 @@ export default function Index() {
               <th className='pr-4 py-2 text-right'></th>
               <th className='pl-4 py-2 text-right'></th>
               <th className='px-2 py-2 text-right'></th>
-              <th className='px-4 py-2 text-right'>Rd. 1</th>
-              <th className='px-4 py-2 text-right'>Rd. 2</th>
-              <th className='px-4 py-2 text-right'>Total</th>
+              <th className='px-4 md:pl-16 py-2 text-sm text-right'>Rd. 1</th>
+              <th className='px-4 py-2 text-sm text-right'>Rd. 2</th>
+              <th className='px-4 py-2 text-sm text-right'>Total</th>
             </tr>
           </thead>
           <tbody>
             {profiles &&
               profiles.map(({ name, playing_handicap }, index) => (
-                <tr className='even:bg-foreground/10' key={name}>
+                <tr className='even:bg-foreground/5' key={name}>
                   <td className='pr-4 py-2 text-right'>{index + 1}.</td>
                   <td className='pl-4 py-2 text-left'>{name}</td>
                   <td className='px-2 py-2 text-right text-sm'>

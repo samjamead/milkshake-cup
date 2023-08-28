@@ -1,41 +1,40 @@
-import Link from 'next/link';
+// import Link from 'next/link';
 import data from './data.json';
 
 export default async function Index() {
   return (
     <div className='w-full'>
-      <div className='animate-in opacity-0 max-w-4xl mx-auto px-3 py-16 lg:py-24 text-foreground'>
-        <div className='flex flex-col items-center lg:mb-2'>
-          <h2 className='text-3xl font-bold'>The Honours Board</h2>
-        </div>
-
-        <div className='w-full p-[1px] bg-gradient-to-r from-transparent via-foreground/10 to-transparent' />
+      <div className='animate-in opacity-0 max-w-4xl mx-auto px-3 py-8 lg:py-12 text-foreground'>
+        <h1 className='text-3xl font-bold mb-4'>Honours Board</h1>
+        <p className='mb-8'>Writeups moving here soon!</p>
 
         <div className='lg:mb-12'>
-          <table className='table-auto w-full'>
+          <table className='table-auto w-full text-sm md:text-base'>
             <thead>
-              <tr className='text-left'>
-                <th>Year</th>
-                <th>Winner</th>
-                <th>Second</th>
-                <th>Venue</th>
+              <tr className='text-left border-b'>
+                <th className='p-2'>Year</th>
+                <th className='p-2'>Winner</th>
+                <th className='p-2 hidden md:table-cell'>Second</th>
+                <th className='p-2'>Venue</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
               {data.map((entry) => (
-                <tr key={entry.year}>
-                  <td>{entry.year}</td>
-                  <td>{entry.winner}</td>
-                  <td>{entry.second || ''}</td>
-                  <td>{entry.venue || ''}</td>
-                  <td className='text-right'>
+                <tr key={entry.year} className='even:bg-foreground/5'>
+                  <td className='p-2'>{entry.year}</td>
+                  <td className='p-2'>{entry.winner}</td>
+                  <td className='p-2 hidden md:table-cell'>
+                    {entry.second || ''}
+                  </td>
+                  <td className='p-2'>{entry.venue || ''}</td>
+                  {/* <td className='text-right'>
                     {entry.link ? (
                       <Link href={entry.link}>Read report &rarr;</Link>
                     ) : (
                       ''
                     )}
-                  </td>
+                  </td> */}
                 </tr>
               ))}
             </tbody>
