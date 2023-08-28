@@ -1,4 +1,5 @@
 // import Link from 'next/link';
+import Link from 'next/link';
 import data from './data.json';
 
 export default async function Index() {
@@ -9,7 +10,7 @@ export default async function Index() {
         <p className='mb-8'>Writeups moving here soon!</p>
 
         <div className='lg:mb-12'>
-          <table className='table-auto w-full text-sm md:text-base'>
+          <table className='mb-8 table-auto w-full text-sm md:text-base'>
             <thead>
               <tr className='text-left border-b'>
                 <th className='p-2'>Year</th>
@@ -39,6 +40,16 @@ export default async function Index() {
               ))}
             </tbody>
           </table>
+          <p>
+            <Link
+              href='https://samjamead.notion.site/samjamead/The-Milkshake-Cup-baa7028673de4e43a6d7920e1066c811'
+              target='_blank'
+              className='underline'
+            >
+              Last year&apos;s website with some writeups
+            </Link>{' '}
+            &rarr;
+          </p>
         </div>
       </div>
     </div>
