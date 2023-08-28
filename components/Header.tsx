@@ -40,18 +40,11 @@ export default async function Header() {
           </Link>
         </div>
         <div>
-          {user ? (
+          {user && (
             <div className='flex items-center gap-4'>
               Hey, {user.email?.split('@')[0]}!
               <LogoutButton />
             </div>
-          ) : (
-            <Link
-              href='/login'
-              className='py-2 px-4 rounded-md no-underline bg-btn-background hover:bg-btn-background-hover'
-            >
-              Login
-            </Link>
           )}
         </div>
       </div>

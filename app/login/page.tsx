@@ -2,13 +2,16 @@ import Messages from './messages';
 
 export default function Login() {
   return (
-    <div className='pt-12 flex flex-col w-full px-4 sm:max-w-md justify-center gap-2'>
-      <p className='mb-8'>Logins coming soon (maybe 2024...)</p>
+    <div className='max-w-4xl mx-auto mt-8 mb-20 px-4 pt-12 flex flex-col justify-center gap-2'>
       <form
-        className='mb-12 flex-1 flex flex-col w-full justify-center gap-2 text-foreground'
+        className='mx-auto p-8 flex-1 flex flex-col w-full md:max-w-md justify-center gap-2 text-foreground border rounded-xl'
         action='/auth/sign-in'
         method='post'
       >
+        <p className='mb-8 text-foreground'>
+          Sorry to dissapoint but this doesn&apos;t do anything yet! Logins
+          coming soon (maybe 2024...)
+        </p>
         <label className='text-md' htmlFor='email'>
           Email
         </label>
