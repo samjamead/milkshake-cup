@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+import Link from 'next/link';
 
 export default function Index() {
   const supabase = createClientComponentClient();
@@ -41,6 +42,12 @@ export default function Index() {
     <div className='w-full'>
       <div className='animate-in opacity-0 max-w-4xl mx-auto px-3 py-8 lg:py-12 text-foreground'>
         <h1 className='text-3xl font-bold mb-8'>2023 Leaderboard</h1>
+        <p className='mb-4'>
+          <Link href='/handicapping' className='underline'>
+            How the handicaps were calculated
+          </Link>{' '}
+          &rarr;
+        </p>
         {error && <div className='text-red-500 mb-4'>{error}</div>}
         <table className='table-auto mb-12'>
           <thead>
