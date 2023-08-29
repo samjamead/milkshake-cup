@@ -1,0 +1,22 @@
+.number_input {
+  padding: 0.25rem 0.5rem;
+  color: hsl(var(--background));
+  text-align: center;
+  border-radius: 4px;
+  max-width: 4rem;
+  font-family: Courier, monospace;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.number_input::-webkit-outer-spin-button,
+.number_input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.number_input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
