@@ -1,7 +1,7 @@
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from 'next/headers';
 import Link from 'next/link';
-import ScoreInputForm from '../../components/ScoreForm/ScoreInputForm';
+import ScoreInputForm from '../../_components/ScoreForm/ScoreInputForm';
 
 export default async function Index() {
   const supabase = createServerComponentClient({ cookies });

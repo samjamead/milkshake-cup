@@ -29,7 +29,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/leaderboard/page.jsx",
-    "components/ScoreForm/ScoreInputForm.jsx"
+    "_components/ScoreForm/ScoreInputForm.jsx"
   ],
   "exclude": ["node_modules"]
 }

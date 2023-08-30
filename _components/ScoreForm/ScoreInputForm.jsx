@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+import upsertScores from '@/_lib/upsertScores';
 import styles from './ScoreInputForm.module.css';
 
 export default function ScoreInputForm() {
@@ -11,10 +12,6 @@ export default function ScoreInputForm() {
   const [unsavedChanges, setUnsavedChanges] = useState(false);
   const [savingStatus, setSavingStatus] = useState('idle');
   const [scores, setScores] = useState({});
-
-  const calculatePlayingHandicap = (handicap, slope) => {
-    return Math.round((slope / 113) * handicap * 0.95);
-  };
 
   const fetchData = async () => {
     const { data, error: fetchError } = await supabase
@@ -28,27 +25,18 @@ export default function ScoreInputForm() {
     }
 
     if (data) {
-      const playerData = data.map((player) => ({
-        ...player,
-        playing_handicap: calculatePlayingHandicap(player.handicap, 89),
-      }));
+      setProfiles(data.sort((a, b) => a.handicap - b.handicap));
 
-      setProfiles(playerData.sort((a, b) => a.handicap - b.handicap));
-    }
-  };
+      // Set initial scores state
+      const initialScores = data.reduce((acc, player) => {
+        acc[player.name] = {
+          rd1: player.rd1_gross || '',
+          rd2: player.rd2_gross || '',
+        };
+        return acc;
+      }, {});
 
-  const upsertData = async (payload) => {
-    const { data, error } = await supabase
-      .from('profiles')
-      .upsert(payload)
-      .select();
-
-    if (error) {
-      setError(error.message);
-    }
-
-    if (data) {
-      console.log('Upsert successful', data);
+      setScores(initialScores);
     }
   };
 
@@ -59,7 +47,10 @@ export default function ScoreInputForm() {
   const handleInputChange = (name, round, e) => {
     const newScores = {
       ...scores,
-      [name]: { ...scores[name], [round]: parseInt(e.target.value) },
+      [name]: {
+        ...scores[name],
+        [round]: parseInt(e.target.value) || '',
+      },
     };
     setScores(newScores);
     setUnsavedChanges(true);
@@ -74,39 +65,18 @@ export default function ScoreInputForm() {
       const result = profiles.map((profile) => {
         const rd1_gross = scores[profile.name]?.rd1 || null;
         const rd2_gross = scores[profile.name]?.rd2 || null;
-        const half_handicap = Math.floor(profile.playing_handicap / 2);
-        const extra_shot = profile.playing_handicap % 2;
-
-        let rd1_net = null;
-        if (rd1_gross && rd1_gross !== 0) {
-          rd1_net = rd1_gross - half_handicap - extra_shot;
-        }
-
-        let rd2_net = null;
-        if (rd2_gross && rd2_gross !== 0) {
-          rd2_net = rd2_gross - half_handicap;
-        }
-
-        let total_net = null;
-        if (rd1_gross && rd1_gross !== 0 && rd2_gross && rd2_gross !== 0) {
-          total_net = rd1_gross + rd2_gross - profile.playing_handicap;
-        } else if (rd1_gross && rd1_gross !== 0) {
-          total_net = rd1_net;
-        }
 
         return {
           id: profile.id,
           name: profile.name,
+          handicap: profile.handicap,
           rd1_gross: rd1_gross,
-          rd1_net: rd1_net,
           rd2_gross: rd2_gross,
-          rd2_net: rd2_net,
           total_gross: (rd1_gross || 0) + (rd2_gross || 0),
-          total_net: total_net,
         };
       });
 
-      upsertData(result);
+      upsertScores(result);
     }, 1500);
   };
 
@@ -126,39 +96,36 @@ export default function ScoreInputForm() {
         </thead>
         <tbody>
           {profiles &&
-            profiles.map(
-              ({ name, playing_handicap, rd1_gross, total_gross }, index) => (
-                <tr className='even:bg-foreground/5' key={name}>
-                  <td className='pr-4 py-2 text-right'>{index + 1}.</td>
-                  <td className='pl-4 py-2 text-left'>{name}</td>
-                  <td className='px-2 py-2 text-right text-sm'>
-                    ({playing_handicap})
-                  </td>
-                  <td className='px-4 py-2 text-right'>
-                    <input
-                      id={`${name}_rd1`}
-                      type='number'
-                      className={styles.number_input}
-                      value={rd1_gross}
-                      onChange={(e) => handleInputChange(name, 'rd1', e)}
-                    />
-                  </td>
-                  <td className='px-4 py-2 text-right'>
-                    <input
-                      id={`${name}_rd2`}
-                      type='number'
-                      className={styles.number_input}
-                      onChange={(e) => handleInputChange(name, 'rd2', e)}
-                    />
-                  </td>
-                  <td className='px-4 py-2 text-right'>
-                    {total_gross
-                      ? total_gross
-                      : (scores[name]?.rd1 || 0) + (scores[name]?.rd2 || 0)}
-                  </td>
-                </tr>
-              )
-            )}
+            profiles.map(({ name, handicap }, index) => (
+              <tr className='even:bg-foreground/5' key={name}>
+                <td className='pr-4 py-2 text-right'>{index + 1}.</td>
+                <td className='pl-4 py-2 text-left'>{name}</td>
+                <td className='px-2 py-2 text-right text-sm'>
+                  ({handicap.toFixed(1)})
+                </td>
+                <td className='px-4 py-2 text-right'>
+                  <input
+                    id={`${name}_rd1`}
+                    type='number'
+                    className={styles.number_input}
+                    value={scores[name]?.rd1}
+                    onChange={(e) => handleInputChange(name, 'rd1', e)}
+                  />
+                </td>
+                <td className='px-4 py-2 text-right'>
+                  <input
+                    id={`${name}_rd2`}
+                    type='number'
+                    className={styles.number_input}
+                    value={scores[name]?.rd2}
+                    onChange={(e) => handleInputChange(name, 'rd2', e)}
+                  />
+                </td>
+                <td className='px-4 py-2 text-right'>
+                  {(scores[name]?.rd1 || 0) + (scores[name]?.rd2 || 0)}
+                </td>
+              </tr>
+            ))}
         </tbody>
       </table>
       <div className='flex justify-end'>

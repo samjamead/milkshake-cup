@@ -1,4 +1,4 @@
-import Hero from '@/components/Home/Hero';
+import Hero from '@/_components/Home/Hero';
 
 export default async function Index() {
   return (

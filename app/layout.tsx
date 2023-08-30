@@ -1,8 +1,8 @@
 import './main.css';
 import './globals.css';
 
-import Header from '@/components/Header';
-import Resources from '@/components/Resources';
+import Header from '@/_components/Header';
+import Resources from '@/_components/Resources';
 
 export const dynamic = 'force-dynamic';
 

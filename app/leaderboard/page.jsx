@@ -9,10 +9,6 @@ export default function Index() {
   const [profiles, setProfiles] = useState([]);
   const [error, setError] = useState(null);
 
-  const calculatePlayingHandicap = (handicap) => {
-    return Math.round((89 / 113) * handicap * 0.95);
-  };
-
   const fetchData = async () => {
     const { data, error: fetchError } = await supabase
       .from('profiles')
@@ -25,23 +21,17 @@ export default function Index() {
     }
 
     if (data) {
-      const playerData = data.map((player) => ({
-        ...player,
-        playing_handicap: calculatePlayingHandicap(player.handicap),
-      }));
+      data.sort((a, b) => {
+        if (a.total_net && !b.total_net) return -1;
 
-      playerData.sort((a, b) => {
-        if (a.total_net !== undefined && b.total_net !== undefined) {
-          // First, sort by total_net
-          if (a.total_net !== b.total_net) {
-            return a.total_net - b.total_net;
-          }
-        }
-        // If total_net is the same or doesn't exist, sort by handicap
+        if (b.total_net && !a.total_net) return 1;
+
+        if (a.total_net && b.total_net) return a.total_net - b.total_net;
+
         return a.handicap - b.handicap;
       });
 
-      setProfiles(playerData);
+      setProfiles(data);
     }
   };
 
@@ -66,27 +56,46 @@ export default function Index() {
               <th className='pr-4 py-2 text-right'></th>
               <th className='pl-4 py-2 text-right'></th>
               <th className='px-2 py-2 text-right'></th>
-              <th className='px-4 md:pl-16 py-2 text-sm text-right'>Rd. 1</th>
-              <th className='px-4 py-2 text-sm text-right'>Rd. 2</th>
-              <th className='px-4 py-2 text-sm text-right'>Total</th>
+              <th className='px-4 md:pl-16 py-2 text-sm text-right text-foreground/40'>
+                Rd. 1 gross
+              </th>
+
+              <th className='px-4 md:pl-16 py-2 text-sm text-right'>
+                Rd. 1 net
+              </th>
+              <th className='px-4 py-2 text-sm text-right text-foreground/40'>
+                Rd. 2 gross
+              </th>
+              <th className='px-4 py-2 text-sm text-right'>Rd. 2 net</th>
+              <th className='px-4 py-2 text-sm text-right text-foreground/40'>
+                Total gross
+              </th>
+              <th className='px-4 py-2 text-sm text-right'>Total net</th>
             </tr>
           </thead>
           <tbody>
             {profiles &&
-              profiles.map(
-                ({ name, playing_handicap, rd1_net, total_net }, index) => (
-                  <tr className='even:bg-foreground/5' key={name}>
-                    <td className='pr-4 py-2 text-right'>{index + 1}.</td>
-                    <td className='pl-4 py-2 text-left'>{name}</td>
-                    <td className='px-2 py-2 text-right text-sm'>
-                      ({playing_handicap})
-                    </td>
-                    <td className='px-4 py-2 text-right'>{rd1_net}</td>
-                    <td className='px-4 py-2 text-right'>--</td>
-                    <td className='px-4 py-2 text-right'>{total_net}</td>
-                  </tr>
-                )
-              )}
+              profiles.map((player, index) => (
+                <tr className='even:bg-foreground/5' key={player.name}>
+                  <td className='pr-4 py-2 text-right'>{index + 1}.</td>
+                  <td className='pl-4 py-2 text-left'>{player.name}</td>
+                  <td className='px-2 py-2 text-right text-sm'>
+                    ({player.playing_handicap})
+                  </td>
+                  <td className='px-4 py-2 text-right text-foreground/40'>
+                    {player.rd1_gross}
+                  </td>
+                  <td className='px-4 py-2 text-right'>{player.rd1_net}</td>
+                  <td className='px-4 py-2 text-right text-foreground/40'>
+                    {player.rd2_gross}
+                  </td>
+                  <td className='px-4 py-2 text-right'>{player.rd2_net}</td>
+                  <td className='px-4 py-2 text-right text-foreground/40'>
+                    {player.total_gross}
+                  </td>
+                  <td className='px-4 py-2 text-right'>{player.total_net}</td>
+                </tr>
+              ))}
           </tbody>
         </table>
       </div>
