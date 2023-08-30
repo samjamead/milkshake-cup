@@ -126,34 +126,39 @@ export default function ScoreInputForm() {
         </thead>
         <tbody>
           {profiles &&
-            profiles.map(({ id, name, playing_handicap }, index) => (
-              <tr className='even:bg-foreground/5' key={name}>
-                <td className='pr-4 py-2 text-right'>{index + 1}.</td>
-                <td className='pl-4 py-2 text-left'>{name}</td>
-                <td className='px-2 py-2 text-right text-sm'>
-                  ({playing_handicap})
-                </td>
-                <td className='px-4 py-2 text-right'>
-                  <input
-                    id={`${name}_rd1`}
-                    type='number'
-                    className={styles.number_input}
-                    onChange={(e) => handleInputChange(name, 'rd1', e)}
-                  />
-                </td>
-                <td className='px-4 py-2 text-right'>
-                  <input
-                    id={`${name}_rd2`}
-                    type='number'
-                    className={styles.number_input}
-                    onChange={(e) => handleInputChange(name, 'rd2', e)}
-                  />
-                </td>
-                <td className='px-4 py-2 text-right'>
-                  {(scores[name]?.rd1 || 0) + (scores[name]?.rd2 || 0)}
-                </td>
-              </tr>
-            ))}
+            profiles.map(
+              ({ name, playing_handicap, rd1_gross, total_gross }, index) => (
+                <tr className='even:bg-foreground/5' key={name}>
+                  <td className='pr-4 py-2 text-right'>{index + 1}.</td>
+                  <td className='pl-4 py-2 text-left'>{name}</td>
+                  <td className='px-2 py-2 text-right text-sm'>
+                    ({playing_handicap})
+                  </td>
+                  <td className='px-4 py-2 text-right'>
+                    <input
+                      id={`${name}_rd1`}
+                      type='number'
+                      className={styles.number_input}
+                      value={rd1_gross}
+                      onChange={(e) => handleInputChange(name, 'rd1', e)}
+                    />
+                  </td>
+                  <td className='px-4 py-2 text-right'>
+                    <input
+                      id={`${name}_rd2`}
+                      type='number'
+                      className={styles.number_input}
+                      onChange={(e) => handleInputChange(name, 'rd2', e)}
+                    />
+                  </td>
+                  <td className='px-4 py-2 text-right'>
+                    {total_gross
+                      ? total_gross
+                      : (scores[name]?.rd1 || 0) + (scores[name]?.rd2 || 0)}
+                  </td>
+                </tr>
+              )
+            )}
         </tbody>
       </table>
       <div className='flex justify-end'>

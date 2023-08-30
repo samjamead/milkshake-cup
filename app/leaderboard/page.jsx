@@ -30,7 +30,18 @@ export default function Index() {
         playing_handicap: calculatePlayingHandicap(player.handicap),
       }));
 
-      setProfiles(playerData.sort((a, b) => a.handicap - b.handicap));
+      playerData.sort((a, b) => {
+        if (a.total_net !== undefined && b.total_net !== undefined) {
+          // First, sort by total_net
+          if (a.total_net !== b.total_net) {
+            return a.total_net - b.total_net;
+          }
+        }
+        // If total_net is the same or doesn't exist, sort by handicap
+        return a.handicap - b.handicap;
+      });
+
+      setProfiles(playerData);
     }
   };
 
@@ -62,18 +73,20 @@ export default function Index() {
           </thead>
           <tbody>
             {profiles &&
-              profiles.map(({ name, playing_handicap }, index) => (
-                <tr className='even:bg-foreground/5' key={name}>
-                  <td className='pr-4 py-2 text-right'>{index + 1}.</td>
-                  <td className='pl-4 py-2 text-left'>{name}</td>
-                  <td className='px-2 py-2 text-right text-sm'>
-                    ({playing_handicap})
-                  </td>
-                  <td className='px-4 py-2 text-right'>--</td>
-                  <td className='px-4 py-2 text-right'>--</td>
-                  <td className='px-4 py-2 text-right'>--</td>
-                </tr>
-              ))}
+              profiles.map(
+                ({ name, playing_handicap, rd1_net, total_net }, index) => (
+                  <tr className='even:bg-foreground/5' key={name}>
+                    <td className='pr-4 py-2 text-right'>{index + 1}.</td>
+                    <td className='pl-4 py-2 text-left'>{name}</td>
+                    <td className='px-2 py-2 text-right text-sm'>
+                      ({playing_handicap})
+                    </td>
+                    <td className='px-4 py-2 text-right'>{rd1_net}</td>
+                    <td className='px-4 py-2 text-right'>--</td>
+                    <td className='px-4 py-2 text-right'>{total_net}</td>
+                  </tr>
+                )
+              )}
           </tbody>
         </table>
       </div>
