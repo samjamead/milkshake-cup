@@ -83,7 +83,7 @@ export default function ScoreInputForm() {
   return (
     <div className='w-full'>
       {error && <div className='text-red-500 mb-4'>{error}</div>}
-      <table className='table-auto mb-4'>
+      <table className='table-auto mb-4 max-w-full'>
         <thead>
           <tr className='border-b'>
             <th className='pr-4 py-2 text-right'></th>

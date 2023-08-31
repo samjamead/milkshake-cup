@@ -50,50 +50,47 @@ export default function Index() {
           &rarr;
         </p>
         {error && <div className='text-red-500 mb-4'>{error}</div>}
-        <table className='table-auto mb-12'>
+        <table className='table-auto mb-12 w-full'>
           <thead>
             <tr className='border-b'>
-              <th className='pr-4 py-2 text-right'></th>
-              <th className='pl-4 py-2 text-right'></th>
-              <th className='px-2 py-2 text-right'></th>
-              <th className='px-4 md:pl-16 py-2 text-sm text-right text-foreground/40'>
-                Rd. 1 gross
-              </th>
-
-              <th className='px-4 md:pl-16 py-2 text-sm text-right'>
-                Rd. 1 net
-              </th>
-              <th className='px-4 py-2 text-sm text-right text-foreground/40'>
-                Rd. 2 gross
-              </th>
-              <th className='px-4 py-2 text-sm text-right'>Rd. 2 net</th>
-              <th className='px-4 py-2 text-sm text-right text-foreground/40'>
-                Total gross
-              </th>
-              <th className='px-4 py-2 text-sm text-right'>Total net</th>
+              <th className='pr-4 py-2'></th>
+              <th className='pl-4 py-2'></th>
+              <th className='px-2 py-2'></th>
+              <th className='px-4 md:pl-16 py-2 text-sm text-right'>Rd. 1</th>
+              <th className='px-4 md:pl-16 py-2 text-sm text-right'>Rd. 2</th>
+              <th className='px-4 py-2 text-sm text-right'>Total</th>
             </tr>
           </thead>
           <tbody>
             {profiles &&
               profiles.map((player, index) => (
-                <tr className='even:bg-foreground/5' key={player.name}>
-                  <td className='pr-4 py-2 text-right'>{index + 1}.</td>
-                  <td className='pl-4 py-2 text-left'>{player.name}</td>
-                  <td className='px-2 py-2 text-right text-sm'>
+                <tr
+                  className='even:bg-foreground/5 text-sm md:text-base'
+                  key={player.name}
+                >
+                  <td className='pr-4 py-2  text-right'>{index + 1}.</td>
+                  <td className='pl-2 md:pl-4 py-2 text-left'>{player.name}</td>
+                  <td className='px-2 py-2 text-right '>
                     ({player.playing_handicap})
                   </td>
-                  <td className='px-4 py-2 text-right text-foreground/40'>
-                    {player.rd1_gross}
+                  <td className='px-4 py-2 text-right'>
+                    {player.rd1_net}{' '}
+                    <span className='text-xs italic text-foreground/50'>
+                      {player.rd1_gross}
+                    </span>
                   </td>
-                  <td className='px-4 py-2 text-right'>{player.rd1_net}</td>
-                  <td className='px-4 py-2 text-right text-foreground/40'>
-                    {player.rd2_gross}
+                  <td className='px-4 py-2 text-right'>
+                    {player.rd2_net}{' '}
+                    <span className='text-xs italic text-foreground/50'>
+                      {player.rd2_gross}
+                    </span>
                   </td>
-                  <td className='px-4 py-2 text-right'>{player.rd2_net}</td>
-                  <td className='px-4 py-2 text-right text-foreground/40'>
-                    {player.total_gross}
+                  <td className='px-4 py-2 text-right'>
+                    {player.total_net}{' '}
+                    <span className='text-xs italic text-foreground/50'>
+                      {player.total_gross}
+                    </span>
                   </td>
-                  <td className='px-4 py-2 text-right'>{player.total_net}</td>
                 </tr>
               ))}
           </tbody>
