@@ -83,12 +83,12 @@ export default function ScoreInputForm() {
   return (
     <div className='w-full'>
       {error && <div className='text-red-500 mb-4'>{error}</div>}
-      <table className='table-auto mb-4 max-w-full'>
+      <table className='table-auto mb-4 w-full'>
         <thead>
           <tr className='border-b'>
-            <th className='pr-4 py-2 text-right'></th>
+            <th className='pr-4 py-2 hidden md:table-cell text-right'></th>
             <th className='pl-4 py-2 text-right'></th>
-            <th className='px-2 py-2 text-right'></th>
+            <th className='px-2 py-2 hidden md:table-cell text-right'></th>
             <th className='px-4 md:pl-16 py-2 text-sm text-right'>Rd. 1</th>
             <th className='px-4 py-2 text-sm text-right'>Rd. 2</th>
             <th className='px-4 py-2 text-sm text-right'>Total</th>
@@ -98,9 +98,11 @@ export default function ScoreInputForm() {
           {profiles &&
             profiles.map(({ name, handicap }, index) => (
               <tr className='even:bg-foreground/5' key={name}>
-                <td className='pr-4 py-2 text-right'>{index + 1}.</td>
+                <td className='pr-4 py-2 hidden md:table-cell text-right'>
+                  {index + 1}.
+                </td>
                 <td className='pl-4 py-2 text-left'>{name}</td>
-                <td className='px-2 py-2 text-right text-sm'>
+                <td className='px-2 py-2 hidden md:table-cell text-right text-sm'>
                   ({handicap.toFixed(1)})
                 </td>
                 <td className='px-4 py-2 text-right'>

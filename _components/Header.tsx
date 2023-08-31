@@ -42,7 +42,9 @@ export default async function Header() {
         <div>
           {user && (
             <div className='flex items-center gap-4'>
-              Hey, {user.email?.split('@')[0]}!
+              <Link href='/scoring' className='pr-4 underline'>
+                Scoring
+              </Link>
               <LogoutButton />
             </div>
           )}

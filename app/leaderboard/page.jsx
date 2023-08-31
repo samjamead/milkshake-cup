@@ -74,22 +74,22 @@ export default function Index() {
                     ({player.playing_handicap})
                   </td>
                   <td className='px-4 py-2 text-right'>
-                    {player.rd1_net}{' '}
                     <span className='text-xs italic text-foreground/50'>
                       {player.rd1_gross}
-                    </span>
+                    </span>{' '}
+                    {player.rd1_net}
                   </td>
                   <td className='px-4 py-2 text-right'>
-                    {player.rd2_net}{' '}
                     <span className='text-xs italic text-foreground/50'>
                       {player.rd2_gross}
-                    </span>
+                    </span>{' '}
+                    {player.rd2_net}
                   </td>
                   <td className='px-4 py-2 text-right'>
-                    {player.total_net}{' '}
                     <span className='text-xs italic text-foreground/50'>
                       {player.total_gross}
-                    </span>
+                    </span>{' '}
+                    {player.total_net}
                   </td>
                 </tr>
               ))}
