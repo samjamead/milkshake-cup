@@ -1,0 +1,69 @@
+[
+  {
+    "year": 2023,
+    "winner": "",
+    "venue": "The Village, Leeds"
+  },
+  {
+    "year": 2022,
+    "winner": "Alan Mead",
+    "second": "Thomas Clements",
+    "venue": "The Village, Leeds",
+    "link": "/honours/2022"
+  },
+  {
+    "year": 2021,
+    "winner": "Sam Mead",
+    "second": "Appin Williamson",
+    "venue": "WGA, Devon",
+    "link": "/honours/2021"
+  },
+  {
+    "year": 2020,
+    "winner": "Samuel Smith",
+    "second": "Harry Langdon, Sam Mead",
+    "venue": "WGA, Devon"
+  },
+  {
+    "year": 2019,
+    "winner": "Thomas Clements",
+    "second": "Alan Mead",
+    "venue": "WGA, Devon"
+  },
+  {
+    "year": 2018,
+    "winner": "Thomas Clements",
+    "second": "Sam Mead",
+    "venue": "Portmore GC, Devon"
+  },
+  {
+    "year": 2017,
+    "winner": "Jamie Mead",
+    "second": "Sam Mead",
+    "venue": "Portmore GC, Devon"
+  },
+  {
+    "year": 2016,
+    "winner": "Thomas Clements",
+    "second": "Sam Mead",
+    "venue": "Chulmleigh GC, Devon"
+  },
+  {
+    "year": 2013,
+    "winner": "Thomas Clements",
+    "second": "Josh Taylor",
+    "venue": "Portmore GC, Devon"
+  },
+  {
+    "year": 2012,
+    "winner": "Alan Mead",
+    "second": "Sam Mead",
+    "venue": "Portmore GC, Devon"
+  },
+  {
+    "year": 2010,
+    "winner": "Josh Taylor",
+    "second": "Harry Langdon",
+    "venue": "Portmore GC, Devon"
+  }
+]
