@@ -1,17 +1,17 @@
-import { fetchPosts } from '@/_utils/fetchPosts';
-import { dateStringToBinary } from '@/_utils/helpers';
-import PostList from '@/_components/post-list';
-import extraPosts from '@/_data/posts.json';
+import { fetchPosts } from "@/_utils/fetchPosts";
+import { dateStringToBinary } from "@/_utils/helpers";
+import PostList from "@/_components/post-list";
+import extraPosts from "@/_data/posts.json";
 
 export const metadata = {
-  title: 'Hirondelle',
+  title: "The Milkshake Cup",
 };
 
 export default async function Home() {
   const posts = await fetchPosts();
 
   const allPosts = [...extraPosts, ...posts].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
 
   const parsedPosts = allPosts.map((post) => {
@@ -23,8 +23,8 @@ export default async function Home() {
   });
 
   return (
-    <div className='w-full'>
-      <div className='max-w-6xl mx-auto flex flex-col gap-8'>
+    <div className="w-full">
+      <div className="max-w-6xl mx-auto flex flex-col gap-8">
         {posts && <PostList posts={parsedPosts} />}
       </div>
     </div>

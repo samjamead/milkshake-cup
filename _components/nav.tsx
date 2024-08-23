@@ -42,6 +42,14 @@ export default function Nav() {
             </li>
           );
         })}
+        <li>
+          <Link
+            href="/honours"
+            className={`text-sm px-2 py-1 rounded font-normal text-foreground/80 hover:text-white hover:bg-purple-500/20 transition-all`}
+          >
+            Honours Board
+          </Link>
+        </li>
       </ul>
     </nav>
   );
