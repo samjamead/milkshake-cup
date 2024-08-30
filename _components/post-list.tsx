@@ -5,7 +5,6 @@ import { PostWithBinaryDate } from '@/_utils/types'
 import Link from 'next/link'
 import Quote from './quote'
 import { useSearchParams } from 'next/navigation'
-import MountainStats from '@/_components/mountain-stats'
 import { ArrowUpRight } from 'lucide-react'
 import * as d3 from 'd3'
 

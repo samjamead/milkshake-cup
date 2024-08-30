@@ -2,6 +2,7 @@ import { fetchPosts } from '@/_utils/fetchPosts'
 import { dateStringToBinary } from '@/_utils/helpers'
 import PostList from '@/_components/post-list'
 import extraPosts from '@/_data/posts.json'
+import Hero from '@/_components/hero'
 
 export const metadata = {
   title: 'The Milkshake Cup',
@@ -23,8 +24,9 @@ export default async function Home() {
   })
 
   return (
-    <div className='w-full'>
-      <div className='mx-auto flex max-w-6xl flex-col gap-8'>
+    <div className='w-full py-8'>
+      <div className='flex flex-col gap-8 lg:gap-16'>
+        <Hero />
         {posts && <PostList posts={parsedPosts} />}
       </div>
     </div>
