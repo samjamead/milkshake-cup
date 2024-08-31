@@ -68,7 +68,7 @@ export default async function DrawPage() {
             selectedNames={['Mike', 'Harry', 'Alistair']}
           />
           <SolariBoard
-            drawDone
+            drawDone={false}
             groupName='Group B'
             names={['Sue', 'Sam', 'Thomas', 'Alan', 'Jamie', 'Appin']}
             selectedNames={['Sam', 'Thomas', 'Appin']}

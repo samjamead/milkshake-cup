@@ -28,7 +28,7 @@ article > ul > li > a {
 }
 
 article > ul > li {
-  margin-left: 1rem;
+  margin-left: 2rem;
   padding-left: 1rem;
   list-style: disc;
 }
