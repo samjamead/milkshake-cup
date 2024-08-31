@@ -1,4 +1,4 @@
-import champ from '@/public/img/2023/champ.jpeg'
+import champ from '@/public/img/2023champ.jpeg'
 import { QuoteIcon } from 'lucide-react'
 import Image from 'next/image'
 
@@ -11,11 +11,11 @@ export default function Hero() {
           width='400'
           height={400}
           alt='The 2023 champion'
-          className='rounded-lg border-l-4 border-l-black'
+          className='rounded-lg border-l-black lg:border-l-4'
         />
       </div>
-      <div className='flex flex-1 flex-col justify-between rounded-l-md bg-purple-300/20 p-5'>
-        <h2 className='text-sm font-bold uppercase tracking-wider'>
+      <div className='flex flex-1 flex-col justify-between gap-8 rounded-l-md bg-purple-300/20 p-5'>
+        <h2 className='text-xs font-bold uppercase tracking-wider lg:text-sm'>
           Welcome from the defending champion
         </h2>
         <div className='flex flex-col gap-4 pr-6'>

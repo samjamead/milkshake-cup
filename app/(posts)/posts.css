@@ -1,11 +1,11 @@
-h2 {
+article > h2 {
   margin-top: 3rem;
   margin-bottom: 1em;
   font-size: 1.25rem;
   font-weight: 500;
 }
 
-h3 {
+article > h3 {
   margin-top: 1.625rem;
   margin-bottom: 1em;
   font-size: 1.125rem;
