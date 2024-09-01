@@ -1,34 +1,34 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import Header from "@/_components/header";
-import Footer from "@/_components/footer";
-import { Suspense } from "react";
-import Loading from "./loading";
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
+import Footer from '@/_components/footer'
+import Header from '@/_components/header'
+import { Suspense } from 'react'
+import Loading from './loading'
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "The Milkshake Cup",
+  title: 'The Milkshake Cup',
   description: "The game's a bogey",
-};
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body
-        className={`${inter.className} w-full min-h-screen px-4 font-light flex flex-col justify-start`}
+        className={`${inter.className} flex min-h-screen w-full flex-col justify-start px-4 font-light`}
       >
         <Suspense fallback={<Loading />}>
           <Header />
-          <main className="w-full max-w-4xl mx-auto">{children}</main>
+          <main className='mx-auto w-full max-w-4xl'>{children}</main>
           <Footer />
         </Suspense>
       </body>
     </html>
-  );
+  )
 }

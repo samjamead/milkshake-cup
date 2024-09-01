@@ -1,9 +1,9 @@
-import Header from './header';
+import Header from '@/_components/header'
 
 export default function Footer() {
   return (
-    <div className='mt-auto w-full pt-20 pb-8'>
+    <div className='mt-auto w-full pb-8 pt-20'>
       <Header />
     </div>
-  );
+  )
 }
