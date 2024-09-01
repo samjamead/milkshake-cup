@@ -12,6 +12,9 @@ export default function Header() {
           className='group flex items-baseline justify-start gap-6 text-lg'
         >
           <Image src={logoWhite} alt='logo' height={48} width={48} />
+          <span className='hidden group-hover:underline md:inline-block'>
+            The Milkshake Cup
+          </span>
         </Link>
 
         <Nav />
