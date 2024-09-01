@@ -11,7 +11,7 @@ export const metadata = {
 export default async function Home() {
   const posts = await fetchPosts()
 
-  const allPosts = [...extraPosts, ...posts].sort(
+  const allPosts = [...posts, ...extraPosts].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   )
 

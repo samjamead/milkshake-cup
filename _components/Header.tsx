@@ -1,16 +1,22 @@
-import Link from "next/link";
-import Nav from "./nav";
+import Link from 'next/link'
+import Nav from './nav'
+import Image from 'next/image'
+import logoWhite from '@/public/logo_white.svg'
 
 export default function Header() {
   return (
-    <div className="w-full">
-      <div className="max-w-4xl mx-auto py-5 flex justify-between items-baseline gap-8">
-        <Link href="/" className="text-lg hover:underline">
-          The Milkshake Cup
+    <div className='w-full'>
+      <div className='mx-auto flex max-w-4xl items-baseline justify-between gap-8 py-5'>
+        <Link
+          href='/'
+          className='group flex items-baseline justify-start gap-4 text-lg'
+        >
+          <Image src={logoWhite} alt='logo' height={32} width={32} />
+          <span className='group-hover:underline'>The Milkshake Cup</span>
         </Link>
 
         <Nav />
       </div>
     </div>
-  );
+  )
 }
