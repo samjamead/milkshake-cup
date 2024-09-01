@@ -25,7 +25,7 @@ export default function Nav() {
 
   return (
     <nav>
-      <ul className='flex flex-col items-end justify-between gap-4 lg:flex-row lg:items-center'>
+      <ul className='flex items-center justify-between gap-4'>
         {/* {menuItems.map(({ name, link }) => {
           return (
             <li key={name}>
@@ -42,6 +42,14 @@ export default function Nav() {
             </li>
           );
         })} */}
+        <li>
+          <Link
+            href='/leaderboard'
+            className={`rounded px-2 py-1 text-sm font-normal text-foreground/80 transition-all hover:bg-purple-500/20 hover:text-white`}
+          >
+            Leaderboard
+          </Link>
+        </li>
         <li>
           <Link
             href='/honours'

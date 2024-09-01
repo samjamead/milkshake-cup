@@ -9,10 +9,10 @@ export default function Header() {
       <div className='mx-auto flex max-w-4xl items-baseline justify-between gap-8 py-5'>
         <Link
           href='/'
-          className='group flex items-baseline justify-start gap-4 text-lg'
+          className='group flex items-baseline justify-start gap-6 text-lg'
         >
-          <Image src={logoWhite} alt='logo' height={32} width={32} />
-          <span className='group-hover:underline'>The Milkshake Cup</span>
+          <Image src={logoWhite} alt='logo' height={48} width={48} />
+          {/* <span className='group-hover:underline'>The Milkshake Cup</span> */}
         </Link>
 
         <Nav />
