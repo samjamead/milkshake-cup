@@ -4,7 +4,7 @@ import { Suspense } from 'react'
 import Loading from './loading'
 import './globals.css'
 import Footer from '@/_components/footer'
-import Header from '@/_components/header'
+import Header from '@/_components/main-header'
 
 const inter = Inter({ subsets: ['latin'] })
 
