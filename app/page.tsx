@@ -1,11 +1,34 @@
-import Hero from '@/_components/Home/Hero';
+import { fetchPosts } from '@/_utils/fetchPosts'
+import { dateStringToBinary } from '@/_utils/helpers'
+import PostList from '@/_components/post-list'
+import extraPosts from '@/_data/posts.json'
+import Hero from '@/_components/hero'
 
-export default async function Index() {
+export const metadata = {
+  title: 'The Milkshake Cup',
+}
+
+export default async function Home() {
+  const posts = await fetchPosts()
+
+  const allPosts = [...posts, ...extraPosts].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  )
+
+  const parsedPosts = allPosts.map((post) => {
+    const binaryDate = dateStringToBinary(post.date)
+    return {
+      ...post,
+      binaryDate,
+    }
+  })
+
   return (
-    <div className='w-full'>
-      <div className='animate-in opacity-0 max-w-4xl mx-auto px-3 py-4 lg:py-8 text-foreground'>
+    <div className='w-full py-8'>
+      <div className='flex flex-col gap-8 lg:gap-16'>
         <Hero />
+        {posts && <PostList posts={parsedPosts} />}
       </div>
     </div>
-  );
+  )
 }

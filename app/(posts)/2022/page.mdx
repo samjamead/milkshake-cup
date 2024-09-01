@@ -1,0 +1,146 @@
+export const metadata = {
+  title: '2022: The Village',
+  date: '2022-09-24',
+  category: 'Writeups',
+}
+
+import PostHero from '@/_components/post-hero'
+import Image from 'next/image'
+
+<PostHero metadata={metadata} />
+
+The Milkshake Cup went on tour! A merry band of southerners headed north in search of the riches and glory that come with victory.
+
+It was a super weekend in Yorkshire, with the Cup bookended by outings at Rudding Park (very nice) and Kirkbymoorside (everyone's favourite golf course). Here's Sam's reel: [https://www.instagram.com/p/CjBnQW_j-3i/](https://www.instagram.com/p/CjBnQW_j-3i/)
+
+As well as introducing a new course to the rotation, the 2022 edition brought two long awaited debutants into the fold! Mike and Sue Clements are finally joined the membership ranks and teed it up in a bumper field of ten golfers.
+
+Four-time champion Thomas played host, including a scouting mission to the new course:
+
+<iframe
+  width='560'
+  height='315'
+  src='https://www.youtube.com/embed/kqRyg-ra-NQ?si=I1MQV3XQYbIzSs9v'
+  title='YouTube video player'
+  frameborder='0'
+  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+  referrerpolicy='strict-origin-when-cross-origin'
+  allowfullscreen
+  className='mt-8'
+></iframe>
+
+<iframe
+  width='560'
+  height='315'
+  src='https://www.youtube.com/embed/eAG0xm3CMxQ?si=HWfi1hH8TQKrCa-d'
+  title='YouTube video player'
+  frameborder='0'
+  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+  referrerpolicy='strict-origin-when-cross-origin'
+  allowfullscreen
+  className='mb-8'
+></iframe>
+
+The format was unchanged: individual strokeplay, two rounds of 9 holes, groupings for the second round determined by the scores at half time. In a slight change to normal proceedings, first round groupings were determined on the day with a balls up!
+
+Excitment reached fever pitch in the closing stages, with two gladiators locked in a real tussle! Unable to separate them after 18 holes, we headed back down the mountainside for a playoff on the 18th hole.
+
+Sudden death, winner takes all... did we give Alan a shot?! I can't remember now (writing this in August 2024) but I do remember the controversy around Sue playing caddie for Alan. Tom was so shaken he put his tee shot into the bunker, and Alan holed out into the wrong hole at some point...
+
+However it all finsihed, it was Alan who took home the trophy (back to where it belongs, on the mantlepiece at 1 Woodland Park). Well played Dad!
+
+import champ from './photos/champ.jpeg'
+import champHover from './photos/champHover.jpeg'
+
+<div className='my-8 flex flex-col items-center justify-between gap-4 lg:flex-row'>
+  <div className='flex-1'>
+    <Image src={champ} alt='The champ!' className='rounded-md' />
+  </div>
+  <div className='flex-1'>
+    <Image src={champHover} alt='The champ!' className='rounded-md' />
+  </div>
+</div>
+
+<table className='my-8'>
+  <thead>
+    <tr>
+      <th className='px-2'>Player</th>
+      <th className='px-2 text-right'>R1 net</th>
+      <th className='px-2 text-right'>R2 net</th>
+      <th className='px-2 text-right'>Total net</th>
+      <th className='px-2 text-right'>Total gross</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className='px-2'>Alan</td>
+      <td className='px-2 text-right'>37</td>
+      <td className='px-2 text-right'>35</td>
+      <td className='px-2 text-right'>72</td>
+      <td className='px-2 text-right'>84</td>
+    </tr>
+    <tr>
+      <td className='px-2'>Tom</td>
+      <td className='px-2 text-right'>36</td>
+      <td className='px-2 text-right'>36</td>
+      <td className='px-2 text-right'>72</td>
+      <td className='px-2 text-right'>76</td>
+    </tr>
+    <tr>
+      <td className='px-2'>Josh</td>
+      <td className='px-2 text-right'>41</td>
+      <td className='px-2 text-right'>35</td>
+      <td className='px-2 text-right'>76</td>
+      <td className='px-2 text-right'>76</td>
+    </tr>
+    <tr>
+      <td className='px-2'>Sue</td>
+      <td className='px-2 text-right'>38</td>
+      <td className='px-2 text-right'>40</td>
+      <td className='px-2 text-right'>78</td>
+      <td className='px-2 text-right'>78</td>
+    </tr>
+    <tr>
+      <td className='px-2'>Ali</td>
+      <td className='px-2 text-right'>41</td>
+      <td className='px-2 text-right'>39</td>
+      <td className='px-2 text-right'>80</td>
+      <td className='px-2 text-right'>104</td>
+    </tr>
+    <tr>
+      <td className='px-2'>Jamie</td>
+      <td className='px-2 text-right'>40</td>
+      <td className='px-2 text-right'>42</td>
+      <td className='px-2 text-right'>82</td>
+      <td className='px-2 text-right'>106</td>
+    </tr>
+    <tr>
+      <td className='px-2'>Sam</td>
+      <td className='px-2 text-right'>40</td>
+      <td className='px-2 text-right'>43</td>
+      <td className='px-2 text-right'>83</td>
+      <td className='px-2 text-right'>83</td>
+    </tr>
+    <tr>
+      <td className='px-2'>Mike</td>
+      <td className='px-2 text-right'>40</td>
+      <td className='px-2 text-right'>43</td>
+      <td className='px-2 text-right'>83</td>
+      <td className='px-2 text-right'>85</td>
+    </tr>
+    <tr>
+      <td className='px-2'>Harry</td>
+      <td className='px-2 text-right'>40</td>
+      <td className='px-2 text-right'>46</td>
+      <td className='px-2 text-right'>86</td>
+      <td className='px-2 text-right'>90</td>
+    </tr>
+    <tr>
+      <td className='px-2'>Pin</td>
+      <td className='px-2 text-right'>46</td>
+      <td className='px-2 text-right'>46</td>
+      <td className='px-2 text-right'>92</td>
+      <td className='px-2 text-right'>116</td>
+    </tr>
+  </tbody>
+</table>

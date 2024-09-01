@@ -1,14 +1,20 @@
 [
   {
-    "year": 2023,
+    "year": 2024,
     "winner": "",
-    "venue": "The Village, Leeds"
+    "venue": "Gilling Castle GC, Yorkshire"
+  },
+  {
+    "year": 2023,
+    "winner": "Harry Langdon",
+    "second": "Thomas Clements",
+    "venue": "The Village, Yorkshire"
   },
   {
     "year": 2022,
     "winner": "Alan Mead",
     "second": "Thomas Clements",
-    "venue": "The Village, Leeds",
+    "venue": "The Village, Yorkshire",
     "link": "/honours/2022"
   },
   {
@@ -46,18 +52,18 @@
     "year": 2016,
     "winner": "Thomas Clements",
     "second": "Sam Mead",
-    "venue": "Chulmleigh GC, Devon"
+    "venue": "Portmore GC, Devon"
   },
   {
-    "year": 2013,
+    "year": 2014,
     "winner": "Thomas Clements",
-    "second": "Josh Taylor",
-    "venue": "Portmore GC, Devon"
+    "second": "Sam Mead",
+    "venue": "Chulmleigh GC, Devon"
   },
   {
     "year": 2012,
     "winner": "Alan Mead",
-    "second": "Sam Mead",
+    "second": "Josh Taylor",
     "venue": "Portmore GC, Devon"
   },
   {

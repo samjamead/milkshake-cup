@@ -1,35 +1,34 @@
-import './main.css';
-import './globals.css';
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import { Suspense } from 'react'
+import Loading from './loading'
+import './globals.css'
+import Footer from '@/_components/footer'
+import Header from '@/_components/header'
 
-import Header from '@/_components/Header';
-import Resources from '@/_components/Resources';
+const inter = Inter({ subsets: ['latin'] })
 
-export const dynamic = 'force-dynamic';
-
-export const metadata = {
+export const metadata: Metadata = {
   title: 'The Milkshake Cup',
-  description: 'The Village, Leeds, Saturday 2nd September 2023',
-};
+  description: "The game's a bogey",
+}
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+}: Readonly<{
+  children: React.ReactNode
+}>) {
   return (
     <html lang='en'>
-      <body className='bg-background'>
-        <Header />
-        <main className='bg-background'>
-          {children}
-
-          <div className='w-full'>
-            <div className='animate-in opacity-0 max-w-4xl mx-auto px-3 text-foreground'>
-              <Resources />
-            </div>
-          </div>
-        </main>
+      <body
+        className={`${inter.className} flex min-h-screen w-full flex-col justify-start px-4 font-light`}
+      >
+        <Suspense fallback={<Loading />}>
+          <Header />
+          <main className='mx-auto w-full max-w-4xl'>{children}</main>
+          <Footer />
+        </Suspense>
       </body>
     </html>
-  );
+  )
 }

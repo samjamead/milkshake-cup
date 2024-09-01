@@ -1,0 +1,103 @@
+export const metadata = {
+  title: '2020: WGA',
+  date: '2020-08-16',
+  category: 'Writeups',
+}
+
+import PostHero from '@/_components/post-hero'
+import AnnualWelcome from '@/_components/annual-welcome'
+import Image from 'next/image'
+
+export function ImageWithCaption({ src, caption }) {
+  return (
+    <div className='my-8 max-w-prose'>
+      {src && <Image src={src} alt={caption} />}
+      <div className='rounded-b-md bg-purple-500/20 p-2'>{caption}</div>
+    </div>
+  )
+}
+
+<PostHero metadata={metadata} />
+
+import tc2 from './photos/tc2.jpeg'
+
+## 2020: The Socially-distanced Edition
+
+import teamShot from './photos/teamShot.jpg'
+
+<ImageWithCaption src={teamShot} caption='A mid-pandemic golf competition' />
+
+The 2020 edition of The Milkshake Cup was held in circumstances like no other. Against the backdrop of a global pandemic, uncertainty was rife in the buildup to the championships.
+
+Unprecedented challenges looked sure to blight the organisation of the biggest golf tournament west of the Cheddar Gorge. Would the contest be able to go ahead? Would everyone be able to travel the hallowed turf of the WGA? Would Harry turn up as hungover as he had done the year before?
+
+<AnnualWelcome name='T. R. Clements' year='2019' image={tc2}>
+  Shape yourselves up this year you bunch of bloody lemons!
+</AnnualWelcome>
+
+Of course, we now know that all three of these fears were proven unnecessary! With overcast skies threatening rain, the intrepid Milkshake Cuppers gathered around the practice green. New for 2020, the redoubtable Stuart was recruited as the honorary starter, and welcomed the defending champion to the tee as only Stuart can.
+
+import firstTee from './photos/firstTee.jpeg'
+
+<ImageWithCaption src={firstTee} caption='Surely not this bloke again?' />
+
+With some cutting remarks about the defending champ's swing, and a reminder to replace divots, repair pitchmarks, and to please avoid slow play, the 2020 championships were under way!
+
+import noPressure from './photos/noPressure.jpg'
+
+<ImageWithCaption src={noPressure} caption='Fore right!' />
+
+Well, it wouldn't be the Milkshake Cup without a bit of early drama. Not two holes into the opening round, tournament low-handicap Josh was pulling up with a bad back! Nobody wants to leave the field when the stakes this high, and Josh bravely battled on to an opening round of 33.
+
+After consultation with the physio at half time, the risk of making the injury worse was deemed too great. Poor old JT was reduced to roving course reporter duties for the rest of the day.
+
+With one foe out of the way, the golf was cagey in the opening round. Nobody looked like taking a rash or unnecessary risk in the early going; an extra club over the water taken here, a putt from the fringe instead of a chip there, bunkers avoided like the plague... Things were looking extremely tight as the first round drew to a close.
+
+At lunch, the rumours whipped around the gallery — the clubhouse leader was not from Yorkshire! In fact, the clubhouse leader was a founding member of the famous trophy, and had carefully plotted his way around the WGA, producing the round of his life. Samuel Smith had emerged from the pack to take a commanding 2 shot lead over the field!
+
+import chance from './photos/chance.jpg'
+
+<ImageWithCaption
+  src={chance}
+  caption="I think you're going to have to chase him down mate!"
+/>
+
+Things started well on the back 9 for the defending champion. Taking his own advice from years gone by, aggressive chipping saw TC get up and down for par at the first, second, and third holes. Perennial runner up Sam got on a run, with a couple of birdies temporarily closing the gap to the leader. Harry kept his powder dry, playing steady golf, and waiting for the opportunity to strike.
+
+import birdiePut from './photos/birdiePut.jpg'
+
+<ImageWithCaption
+  src={birdiePut}
+  caption='Birdies not enough to make up ground!'
+/>
+
+Meanwhile, further down the scoreboard, things had taken a turn for the worse. Any early form shown was starting to desert the competition, a pasty and a beer sitting heavy in the stomach proving too much of a challenge. Cristina and Alan dueled bravely and both improved on their first round scores, but it was too little, too late to threaten the leader.
+
+For Appin, Jamie, and Greg, the day turned into a competition to see who could finish with the lightest bag, as many sacrifices to the watery golf gods broke the surface of the WGA's numerous hazards. There's always next year!
+
+Back at the top of the leaderboard, the chasing pack were finding out that Samuel had only been warming up on the front 9. He was toying with the field! Hours and hours of practice were coming to fruition, as tee shot after tee shot found the putting surface, and putt after putt found the bottom of the cup.
+
+And so, the final putt took a tour of the cup and dropped below the surface. A new champion was anointed! Finally, the south has wrestled back control of the trophy, a new name etched into the honours board.
+
+We couldn't have asked for a more deserving champion: calm under pressure, magnanimous in victory, gracious with his praise for the course and his competitors.
+
+Congratulations Samuel, enjoy playing off scratch next year!
+
+import handshake from './photos/handshake.jpg'
+
+<ImageWithCaption src={handshake} caption='Smiles all round!' />
+
+import champ from './photos/champ.jpeg'
+
+<ImageWithCaption src={champ} caption='The most handsome champion to date' />
+
+import champ2 from './photos/champ2.jpg'
+
+<ImageWithCaption
+  src={champ2}
+  caption='The welcome home committee was most impressed'
+/>
+
+import scores from './photos/scores.jpeg'
+
+<ImageWithCaption src={scores} caption="Who doesn't love the data" />
