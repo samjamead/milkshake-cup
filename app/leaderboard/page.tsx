@@ -82,14 +82,14 @@ export default function Leaderboard() {
         </button>
       </div>
 
-      <div className='rounded-md border border-foreground/50'>
-        <table className='w-full max-w-md'>
+      <div className='w-full rounded-md border border-foreground/50'>
+        <table className='w-full'>
           <thead>
             <tr>
-              <td className='p-3'>Rank</td>
+              <td className='p-3 md:pl-5'>Rank</td>
               <td className='p-3'>Player</td>
               <td className='p-3 text-right'>Thru</td>
-              <td className='p-3 text-right'>Net score to par</td>
+              <td className='p-3 text-right md:pr-5'>Net score to par</td>
             </tr>
           </thead>
           <tbody>
@@ -109,10 +109,10 @@ export default function Leaderboard() {
                     key={row.player}
                     className='border-t border-foreground/50'
                   >
-                    <td className='p-3'>{index + 1}</td>
+                    <td className='p-3 md:pl-5'>{index + 1}</td>
                     <td className='p-3'>{row.player}</td>
                     <td className='p-3 text-right font-mono'>{row.thru}</td>
-                    <td className='p-3 text-right font-mono'>
+                    <td className='p-3 text-right font-mono md:pr-5'>
                       {row.net_to_par}
                     </td>
                   </tr>
