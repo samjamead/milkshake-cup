@@ -20,23 +20,11 @@ export type LeaderboardRow = {
   net_to_par: string
 }
 
-// Helper function to debounce any function
-const debounce = (func: Function, delay: number) => {
-  let timer: NodeJS.Timeout
-  return (...args: any) => {
-    clearTimeout(timer)
-    timer = setTimeout(() => {
-      func(...args)
-    }, delay)
-  }
-}
-
 export default function Leaderboard() {
   const [leaderboard, setLeaderboard] = useState<LeaderboardRow[]>([])
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [isError, setIsError] = useState<boolean>(false)
 
-  // Fetch leaderboard data
   const updateLeaderboard = async () => {
     setIsError(false)
     setIsLoading(true)
@@ -56,13 +44,6 @@ export default function Leaderboard() {
     }, 1000)
   }
 
-  // useCallback for debouncing the refresh button click
-  const debouncedUpdateLeaderboard = useCallback(
-    debounce(() => updateLeaderboard(), 300),
-    []
-  )
-
-  // Fetch leaderboard data on initial component load
   useEffect(() => {
     updateLeaderboard()
   }, [])
@@ -74,7 +55,7 @@ export default function Leaderboard() {
         <button
           type='button'
           className='rounded border px-3 py-1 text-sm disabled:opacity-50'
-          onClick={debouncedUpdateLeaderboard}
+          onClick={() => updateLeaderboard()}
           disabled={isLoading}
           aria-label='Refresh leaderboard'
         >
