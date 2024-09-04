@@ -1,4 +1,4 @@
-import data from './data.json'
+import honours from '../../_data/honours.json'
 
 export default async function Index() {
   return (
@@ -19,7 +19,7 @@ export default async function Index() {
               </tr>
             </thead>
             <tbody>
-              {data.map((entry) => (
+              {honours.map((entry) => (
                 <tr key={entry.year} className='even:bg-foreground/5'>
                   <td className='p-2'>{entry.year}</td>
                   <td className='p-2'>{entry.venue || ''}</td>
