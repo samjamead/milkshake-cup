@@ -70,7 +70,7 @@ export default function Leaderboard() {
   return (
     <div className='animate-in flex flex-col gap-6 py-6 lg:gap-12 lg:py-12'>
       <div className='flex items-center justify-between'>
-        <h2 className='text-xl font-semibold'>Live Leaderboard</h2>
+        <h2 className='text-xl font-semibold md:text-2xl'>Live Leaderboard</h2>
         <button
           type='button'
           className='rounded border px-3 py-1 text-sm disabled:opacity-50'
