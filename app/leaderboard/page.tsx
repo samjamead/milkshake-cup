@@ -1,6 +1,18 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
+
+type MessageRowProps = {
+  message: string
+}
+
+const MessageRow = ({ message }: MessageRowProps) => (
+  <tr className='border-t border-foreground/50'>
+    <td colSpan={4} className='py-6 text-center text-sm'>
+      {message}
+    </td>
+  </tr>
+)
 
 export type LeaderboardRow = {
   player: string
@@ -8,11 +20,23 @@ export type LeaderboardRow = {
   net_to_par: string
 }
 
+// Helper function to debounce any function
+const debounce = (func: Function, delay: number) => {
+  let timer: NodeJS.Timeout
+  return (...args: any) => {
+    clearTimeout(timer)
+    timer = setTimeout(() => {
+      func(...args)
+    }, delay)
+  }
+}
+
 export default function Leaderboard() {
   const [leaderboard, setLeaderboard] = useState<LeaderboardRow[]>([])
   const [isLoading, setIsLoading] = useState<boolean>(false)
-  const [isError, setIsError] = useState<boolean>(true)
+  const [isError, setIsError] = useState<boolean>(false)
 
+  // Fetch leaderboard data
   const updateLeaderboard = async () => {
     setIsError(false)
     setIsLoading(true)
@@ -23,14 +47,22 @@ export default function Leaderboard() {
         )
         const data = await response.json()
         setLeaderboard(data)
-        setIsLoading(false)
       } catch (error) {
         console.error('Error updating leaderboard:', error)
         setIsError(true)
+      } finally {
+        setIsLoading(false)
       }
     }, 1000)
   }
 
+  // useCallback for debouncing the refresh button click
+  const debouncedUpdateLeaderboard = useCallback(
+    debounce(() => updateLeaderboard(), 300),
+    []
+  )
+
+  // Fetch leaderboard data on initial component load
   useEffect(() => {
     updateLeaderboard()
   }, [])
@@ -41,8 +73,10 @@ export default function Leaderboard() {
         <h2 className='text-xl font-semibold'>Live Leaderboard</h2>
         <button
           type='button'
-          className='rounded border px-3 py-1 text-sm'
-          onClick={() => updateLeaderboard()}
+          className='rounded border px-3 py-1 text-sm disabled:opacity-50'
+          onClick={debouncedUpdateLeaderboard}
+          disabled={isLoading}
+          aria-label='Refresh leaderboard'
         >
           Refresh
         </button>
@@ -59,38 +93,30 @@ export default function Leaderboard() {
             </tr>
           </thead>
           <tbody>
-            {isError ||
-              (isLoading && (
-                <tr className='border-t border-foreground/50'>
-                  <td colSpan={4} className='py-6 text-center text-sm'>
-                    {isError
-                      ? 'Error fetching latest scores, sorry!'
-                      : 'Fetching latest scores...'}
-                  </td>
-                </tr>
-              ))}
+            {isLoading && <MessageRow message='Fetching latest scores...' />}
+            {isError && (
+              <MessageRow message='Error fetching latest scores, sorry!' />
+            )}
+            {!isLoading && !isError && leaderboard.length === 0 && (
+              <MessageRow message='No data available.' />
+            )}
+
             {leaderboard.length > 0 &&
-              leaderboard.length > 0 &&
               leaderboard
-                .sort(
-                  (a: LeaderboardRow, b: LeaderboardRow) =>
-                    parseInt(a.net_to_par) - parseInt(b.net_to_par)
-                )
-                .map((row: LeaderboardRow, index: number) => {
-                  return (
-                    <tr
-                      key={row.player}
-                      className='border-t border-foreground/50'
-                    >
-                      <td className='p-3'>{index + 1}</td>
-                      <td className='p-3'>{row.player}</td>
-                      <td className='p-3 text-right font-mono'>{row.thru}</td>
-                      <td className='p-3 text-right font-mono'>
-                        {row.net_to_par}
-                      </td>
-                    </tr>
-                  )
-                })}
+                .sort((a, b) => parseInt(a.net_to_par) - parseInt(b.net_to_par))
+                .map((row, index) => (
+                  <tr
+                    key={row.player}
+                    className='border-t border-foreground/50'
+                  >
+                    <td className='p-3'>{index + 1}</td>
+                    <td className='p-3'>{row.player}</td>
+                    <td className='p-3 text-right font-mono'>{row.thru}</td>
+                    <td className='p-3 text-right font-mono'>
+                      {row.net_to_par}
+                    </td>
+                  </tr>
+                ))}
           </tbody>
         </table>
       </div>
