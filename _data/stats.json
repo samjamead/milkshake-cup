@@ -1,0 +1,622 @@
+[
+  {
+    "year": 2010,
+    "player": "Josh Taylor",
+    "place": 1
+  },
+  {
+    "year": 2010,
+    "player": "Harry Langdon",
+    "place": 2
+  },
+  {
+    "year": 2010,
+    "player": "Samuel Smith",
+    "place": 3
+  },
+  {
+    "year": 2010,
+    "player": "Sam Mead",
+    "place": 4
+  },
+  {
+    "year": 2012,
+    "player": "Alan Mead",
+    "place": 1
+  },
+  {
+    "year": 2012,
+    "player": "Josh Taylor",
+    "place": 2
+  },
+  {
+    "year": 2012,
+    "player": "Harry Langdon"
+  },
+  {
+    "year": 2012,
+    "player": "Thomas Clements"
+  },
+  {
+    "year": 2012,
+    "player": "Sam Mead"
+  },
+  {
+    "year": 2012,
+    "player": "Alistair Shepherd"
+  },
+  {
+    "year": 2014,
+    "player": "Thomas Clements",
+    "place": 1
+  },
+  {
+    "year": 2014,
+    "player": "Sam Mead",
+    "place": 2
+  },
+  {
+    "year": 2014,
+    "player": "Alistair Shepherd"
+  },
+  {
+    "year": 2016,
+    "player": "Thomas Clements",
+    "place": 1
+  },
+  {
+    "year": 2016,
+    "player": "Sam Mead",
+    "place": 2
+  },
+  {
+    "year": 2017,
+    "player": "Jamie Mead",
+    "place": 1
+  },
+  {
+    "year": 2017,
+    "player": "Sam Mead",
+    "place": 2
+  },
+  {
+    "year": 2018,
+    "player": "Thomas Clements",
+    "place": 1
+  },
+  {
+    "year": 2018,
+    "player": "Sam Mead",
+    "place": 2
+  },
+  {
+    "year": 2018,
+    "player": "Josh Taylor"
+  },
+  {
+    "year": 2018,
+    "player": "Harry Langdon"
+  },
+  {
+    "year": 2018,
+    "player": "Alan Mead"
+  },
+  {
+    "year": 2018,
+    "player": "Samuel Smith"
+  },
+  {
+    "year": 2019,
+    "player": "Thomas Clements",
+    "place": 1,
+    "netScore": 59,
+    "round1net": 31,
+    "round2net": 28,
+    "handicap": 7,
+    "netToPar": 5
+  },
+  {
+    "year": 2019,
+    "player": "Alan Mead",
+    "place": 2,
+    "netScore": 60,
+    "round1net": 30,
+    "round2net": 30,
+    "handicap": 14,
+    "netToPar": 6
+  },
+  {
+    "year": 2019,
+    "player": "Sam Mead",
+    "place": 3,
+    "netScore": 61,
+    "round1net": 36,
+    "round2net": 25,
+    "handicap": 5,
+    "netToPar": 7
+  },
+  {
+    "year": 2019,
+    "player": "Cristina Revuela Aguilar",
+    "place": 4,
+    "netScore": 62,
+    "round1net": 32,
+    "round2net": 20,
+    "handicap": 7,
+    "netToPar": 8
+  },
+  {
+    "year": 2019,
+    "player": "Greg Butt",
+    "place": 4,
+    "netScore": 62,
+    "round1net": 34,
+    "round2net": 28,
+    "handicap": 18,
+    "netToPar": 8
+  },
+  {
+    "year": 2019,
+    "player": "Josh Taylor",
+    "place": 4,
+    "netScore": 62,
+    "round1net": 33,
+    "round2net": 29,
+    "handicap": 4,
+    "netToPar": 8
+  },
+  {
+    "year": 2019,
+    "player": "Jamie Mead",
+    "place": 7,
+    "netScore": 68,
+    "round1net": 36,
+    "round2net": 32,
+    "handicap": 18,
+    "netToPar": 14
+  },
+  {
+    "year": 2019,
+    "player": "Harry Langdon",
+    "place": 8,
+    "netScore": 70,
+    "round1net": 33,
+    "round2net": 37,
+    "handicap": 7,
+    "netToPar": 16
+  },
+  {
+    "year": 2019,
+    "player": "Samuel Smith",
+    "place": 9,
+    "netScore": 72,
+    "round1net": 33,
+    "round2net": 39,
+    "handicap": 18,
+    "netToPar": 18
+  },
+  {
+    "year": 2019,
+    "player": "Appin Williamson",
+    "place": 10,
+    "netScore": 77,
+    "round1net": 38,
+    "round2net": 39,
+    "handicap": 18,
+    "netToPar": 23
+  },
+  {
+    "year": 2019,
+    "player": "Alistair Shepherd",
+    "place": 11,
+    "netScore": 81,
+    "round1net": 39,
+    "round2net": 42,
+    "handicap": 18,
+    "netToPar": 27
+  },
+  {
+    "year": 2020,
+    "player": "Samuel Smith",
+    "place": 1,
+    "netScore": 52,
+    "handicap": 27,
+    "netToPar": -2
+  },
+  {
+    "year": 2020,
+    "player": "Harry Langdon",
+    "place": 2,
+    "netScore": 61,
+    "handicap": 8,
+    "netToPar": 7
+  },
+  {
+    "year": 2020,
+    "player": "Sam Mead",
+    "place": 2,
+    "netScore": 61,
+    "handicap": 4,
+    "netToPar": 7
+  },
+  {
+    "year": 2020,
+    "player": "Thomas Clements",
+    "place": 4,
+    "netScore": 63,
+    "handicap": 6,
+    "netToPar": 9
+  },
+  {
+    "year": 2020,
+    "player": "Cristina Revuela Aguilar",
+    "place": 5,
+    "netScore": 65,
+    "handicap": 8,
+    "netToPar": 11
+  },
+  {
+    "year": 2020,
+    "player": "Alan Mead",
+    "place": 5,
+    "netScore": 65,
+    "handicap": 12,
+    "netToPar": 11
+  },
+  {
+    "year": 2020,
+    "player": "Jamie Mead",
+    "place": 7,
+    "netScore": 68,
+    "handicap": 18,
+    "netToPar": 14
+  },
+  {
+    "year": 2020,
+    "player": "Appin Williamson",
+    "place": 7,
+    "netScore": 68,
+    "handicap": 27,
+    "netToPar": 14
+  },
+  {
+    "year": 2020,
+    "player": "Greg Butt",
+    "place": 9,
+    "netScore": 81,
+    "handicap": 18,
+    "netToPar": 27
+  },
+  {
+    "year": 2020,
+    "player": "Josh Taylor",
+    "place": "wd",
+    "handicap": 2
+  },
+  {
+    "year": 2021,
+    "player": "Sam Mead",
+    "place": 1,
+    "netScore": 53,
+    "netToPar": -1
+  },
+  {
+    "year": 2021,
+    "player": "Appin Williamson",
+    "place": 2,
+    "netScore": 57,
+    "netToPar": 3
+  },
+  {
+    "year": 2021,
+    "player": "Josh Taylor",
+    "place": 3,
+    "netScore": 58,
+    "netToPar": 4
+  },
+  {
+    "year": 2021,
+    "player": "Alan Mead",
+    "place": 3,
+    "netScore": 58,
+    "netToPar": 4
+  },
+  {
+    "year": 2021,
+    "player": "Harry Langdon",
+    "place": 5,
+    "netScore": 63,
+    "netToPar": 9
+  },
+  {
+    "year": 2021,
+    "player": "Samuel Smith",
+    "place": 6,
+    "netScore": 70,
+    "netToPar": 16
+  },
+  {
+    "year": 2021,
+    "player": "Jamie Mead",
+    "place": 7,
+    "netScore": 73,
+    "netToPar": 19
+  },
+  {
+    "year": 2021,
+    "player": "Alistair Shepherd",
+    "place": 8,
+    "netScore": 80,
+    "netToPar": 26
+  },
+  {
+    "year": 2022,
+    "player": "Alan Mead",
+    "place": 1,
+    "round1net": 37,
+    "round2net": 35,
+    "netScore": 72,
+    "netToPar": 2
+  },
+  {
+    "year": 2022,
+    "player": "Thomas Clements",
+    "place": 2,
+    "round1net": 36,
+    "round2net": 36,
+    "netScore": 72,
+    "netToPar": 2
+  },
+  {
+    "year": 2022,
+    "player": "Josh Taylor",
+    "place": 3,
+    "round1net": 41,
+    "round2net": 35,
+    "netScore": 76,
+    "netToPar": 6
+  },
+  {
+    "year": 2022,
+    "player": "Sue Clements",
+    "place": 4,
+    "round1net": 38,
+    "round2net": 40,
+    "netScore": 78,
+    "netToPar": 8
+  },
+  {
+    "year": 2022,
+    "player": "Alistair Shepherd",
+    "place": 5,
+    "round1net": 41,
+    "round2net": 39,
+    "netScore": 80,
+    "netToPar": 10
+  },
+  {
+    "year": 2022,
+    "player": "Jamie Mead",
+    "place": 6,
+    "round1net": 40,
+    "round2net": 42,
+    "netScore": 82,
+    "netToPar": 12
+  },
+  {
+    "year": 2022,
+    "player": "Sam Mead",
+    "place": 7,
+    "round1net": 40,
+    "round2net": 43,
+    "netScore": 83,
+    "netToPar": 13
+  },
+  {
+    "year": 2022,
+    "player": "Mike Clements",
+    "place": 7,
+    "round1net": 40,
+    "round2net": 43,
+    "netScore": 83,
+    "netToPar": 13
+  },
+  {
+    "year": 2022,
+    "player": "Harry Langdon",
+    "place": 9,
+    "round1net": 40,
+    "round2net": 46,
+    "netScore": 86,
+    "netToPar": 16
+  },
+  {
+    "year": 2022,
+    "player": "Appin Williamson",
+    "place": 10,
+    "round1net": 46,
+    "round2net": 46,
+    "netScore": 92,
+    "netToPar": 22
+  },
+  {
+    "year": 2023,
+    "player": "Harry Langdon",
+    "place": 1,
+    "netScore": 71,
+    "round1net": 37,
+    "round2net": 34,
+    "netToPar": 1
+  },
+  {
+    "year": 2023,
+    "player": "Thomas Clements",
+    "place": 2,
+    "netScore": 74,
+    "round1net": 40,
+    "round2net": 34,
+    "netToPar": 4
+  },
+  {
+    "year": 2023,
+    "player": "Alan Mead",
+    "place": 2,
+    "netScore": 74,
+    "round1net": 36,
+    "round2net": 38,
+    "netToPar": 4
+  },
+  {
+    "year": 2023,
+    "player": "Sue Clements",
+    "place": 4,
+    "netScore": 75,
+    "round1net": 36,
+    "round2net": 39,
+    "netToPar": 5
+  },
+  {
+    "year": 2023,
+    "player": "Josh Taylor",
+    "place": 4,
+    "netScore": 75,
+    "round1net": 35,
+    "round2net": 40,
+    "netToPar": 5
+  },
+  {
+    "year": 2023,
+    "player": "Sam Mead",
+    "place": 4,
+    "netScore": 75,
+    "round1net": 33,
+    "round2net": 42,
+    "netToPar": 5
+  },
+  {
+    "year": 2023,
+    "player": "Mike Clements",
+    "place": 7,
+    "netScore": 81,
+    "round1net": 43,
+    "round2net": 38,
+    "netToPar": 11
+  },
+  {
+    "year": 2023,
+    "player": "Jamie Mead",
+    "place": 8,
+    "netScore": 86,
+    "round1net": 41,
+    "round2net": 45,
+    "netToPar": 16
+  },
+  {
+    "year": 2023,
+    "player": "Appin Williamson",
+    "place": 9,
+    "netScore": 89,
+    "round1net": 47,
+    "round2net": 42,
+    "netToPar": 19
+  },
+  {
+    "year": 2023,
+    "player": "Alistair Shepherd",
+    "place": 9,
+    "netScore": 89,
+    "round1net": 40,
+    "round2net": 49,
+    "netToPar": 19
+  },
+  {
+    "year": 2024,
+    "player": "Alistair Shepherd",
+    "place": 1,
+    "handicap": 36,
+    "round1net": 36,
+    "round2net": 32,
+    "netScore": 68,
+    "netToPar": 0
+  },
+  {
+    "year": 2024,
+    "player": "Thomas Clements",
+    "place": 2,
+    "handicap": 13,
+    "round1net": 38,
+    "round2net": 37,
+    "netScore": 75,
+    "netToPar": 7
+  },
+  {
+    "year": 2024,
+    "player": "Sam Mead",
+    "place": 2,
+    "handicap": 10,
+    "round1net": 37,
+    "round2net": 38,
+    "netScore": 75,
+    "netToPar": 7
+  },
+  {
+    "year": 2024,
+    "player": "Sue Clements",
+    "place": 4,
+    "handicap": 10,
+    "round1net": 39,
+    "round2net": 41,
+    "netScore": 80,
+    "netToPar": 9
+  },
+  {
+    "year": 2024,
+    "player": "Harry Langdon",
+    "place": 5,
+    "handicap": 16,
+    "round1net": 41,
+    "round2net": 37,
+    "netScore": 78,
+    "netToPar": 10
+  },
+  {
+    "year": 2024,
+    "player": "Mike Clements",
+    "place": 6,
+    "handicap": 11,
+    "round1net": 36,
+    "round2net": 43,
+    "netScore": 79,
+    "netToPar": 11
+  },
+  {
+    "year": 2024,
+    "player": "Alan Mead",
+    "place": 7,
+    "handicap": 24,
+    "round1net": 36,
+    "round2net": 45,
+    "netScore": 81,
+    "netToPar": 13
+  },
+  {
+    "year": 2024,
+    "player": "Jamie Mead",
+    "place": 8,
+    "handicap": 30,
+    "round1net": 41,
+    "round2net": 42,
+    "netScore": 83,
+    "netToPar": 15
+  },
+  {
+    "year": 2024,
+    "player": "Appin Williamson",
+    "place": 9,
+    "handicap": 36,
+    "round1net": 48,
+    "round2net": 44,
+    "netScore": 92,
+    "netToPar": 21
+  }
+]
