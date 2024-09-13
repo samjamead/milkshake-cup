@@ -9,9 +9,15 @@ export default function Header() {
       <div className='mx-auto flex max-w-4xl items-baseline justify-between gap-8 py-5'>
         <Link
           href='/'
-          className='group flex items-baseline justify-start gap-6 text-lg'
+          className='group flex items-baseline justify-start gap-6'
         >
-          <Image src={logoWhite} alt='logo' height={48} width={48} />
+          <Image
+            src={logoWhite}
+            alt='logo'
+            width={48}
+            style={{ height: 'auto' }}
+            priority
+          />
           <span className='hidden group-hover:underline md:inline-block'>
             The Milkshake Cup
           </span>

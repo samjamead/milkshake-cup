@@ -15,9 +15,6 @@ const menuItems = [
 
 export default function Nav() {
   const path = usePathname()
-
-  console.log(path)
-
   return (
     <nav>
       <ul className='flex items-center justify-between gap-4'>
