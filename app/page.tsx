@@ -25,8 +25,8 @@ export default async function Home() {
 
   return (
     <div className='w-full py-8'>
-      <div className='flex flex-col gap-8 lg:gap-16'>
-        <Hero />
+      <div className='flex flex-col gap-8 pt-12 lg:gap-16 lg:pt-20'>
+        {/* <Hero /> */}
         {posts && <PostList posts={parsedPosts} />}
       </div>
     </div>
