@@ -77,7 +77,7 @@ export default function Page() {
             <h3 className='text-lg font-semibold'>What wins?</h3>
             <p>Play to your handicap and you&apos;ll be in with a chance:</p>
             <p className='text-sm text-foreground/80'>
-              All score are net to par
+              All scores are net to par
             </p>
           </div>
 
