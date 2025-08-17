@@ -21,11 +21,22 @@ export default function Hero() {
         <div className='flex flex-col gap-4 pr-6'>
           <QuoteIcon className='scale-x-[-1]' />
           <p>
-            The Milkshake Cup has shown each year that it can only be won by the
-            person whose soul objective is to have fun. So the question is
-            &ndash; how badly do you not want to win it? <br />
-            <br /> Good luck out there... this could be our best yet!
+            Ladies and gentlemen, it is an honour to be welcoming you all back
+            for the 13th Milkshake Cup.{' '}
           </p>
+          <p>
+            A star on the shirt - oh what a thing to behold! I imagine that my
+            delight at being crowned champion can only be matched by your
+            surprise! And yet it should not be so - for year after year we are
+            reminded that to win here is to most fully embody the spirit of the
+            cup!
+          </p>
+          <p>
+            It would be remiss of me not to toast Appin - I know you are here in
+            spirit and we look forward to welcoming you back next year. We shall
+            send you our sticky wicket entries for judging!
+          </p>{' '}
+          <p>For the rest of you - play well and look for the spirit!</p>
         </div>
         <p className='text-sm text-foreground/80'>
           &mdash;Harry Langdon, 2023 Milkshake Cup Champion
