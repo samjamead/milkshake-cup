@@ -31,7 +31,7 @@ export default function Leaderboard() {
     setTimeout(async () => {
       try {
         const response = await fetch(
-          'https://opensheet.elk.sh/1lvgWl71GMc_8VAHN85Iu9HH5NVwKFuPflPzX-HhyrgI/liveleader'
+          'https://opensheet.elk.sh/1HHomcApRYcviI5uLXkKXPNKRs12J1InhSwwU1_bDatg/liveleader'
         )
         const data = await response.json()
         setLeaderboard(data)
@@ -41,7 +41,7 @@ export default function Leaderboard() {
       } finally {
         setIsLoading(false)
       }
-    }, 1000)
+    }, 800)
   }
 
   useEffect(() => {
