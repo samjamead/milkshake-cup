@@ -6,7 +6,7 @@ import logoWhite from '@/public/logo_white.svg'
 export default function Header() {
   return (
     <div className='w-full'>
-      <div className='mx-auto flex max-w-4xl items-baseline justify-between gap-8 py-5'>
+      <div className='mx-auto flex max-w-4xl items-center justify-between gap-8 py-5 md:items-baseline'>
         <Link
           href='/'
           className='group flex items-baseline justify-start gap-6'
