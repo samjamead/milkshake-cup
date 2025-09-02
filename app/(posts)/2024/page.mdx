@@ -6,6 +6,7 @@ export const metadata = {
 
 import PostHero from '@/_components/post-hero'
 import HandicapTable from './handicap-table'
+import Image from 'next/image'
 
 <PostHero metadata={metadata} />
 
@@ -28,52 +29,30 @@ Oh, so much of Harry's address would prove to be prophetic. It _was_ our best ye
 
 But before we get into all that, let us rewind to our second entry to Lions Day. We were welcomed like long lost brothers and sisters, recognised as soon as we strode out of the car park, and ushered inside to part with our hard earned cash.
 
-**Cream First** (Appin, Jamie, Tom, Walshy) welcomed in
+**Cream First** (Appin, Jamie, Tom, Walshy) welcomed in...
 
-**Devon Dumplings** (Alistair, Alan, Harry, Sam)
+...
 
-Then back to the Struan for pizza night!
+...
 
-## Saturday &mdash; The Milkshake Cup
+...
 
-This year we're heading to the glorious Gilling Castle Golf Club ([directions](https://www.google.com/maps/place/Gilling+Castle/@54.1832864,-1.0661554,509m/data=!3m1!1e3!4m6!3m5!1s0x487ece138b01b4b9:0x545bdca7e27f37f9!8m2!3d54.1835346!4d-1.0655843!16zL20vMGNoNXY2?entry=ttu&g_ep=EgoyMDI0MDgyOC4wIKXMDSoASAFQAw%3D%3D)) which is 21 minutes from Kirkbymoorside. In the morning we will pick up some pasties and curd tarts for lunch. We can enjoy a breather after 9 holes!
+Well, believe it or not, I wrote all that 11 months ago! But it doesn't look like I got very far, and now I have no idea what else I was going to write. I'm sure it was an excellent story! And just look how beautiful we all looked on the first tee:
 
-**The first group tees off at 11am**.
+import lions from './photos/lions.jpeg'
 
-- Group 1: Mike, Harry, Alistair
-- Group 2: Sam, Thomas, Appin
-- Group 3: Sue, Alan, Jamie
+<Image
+  className='my-8'
+  src={lions}
+  alt='Who let Tom get dressed by himself? '
+/>
 
-### Handicaps
+Alas no repeat of the previous year's fireworks, but Tom very nearly drove the green on the 18th, if only it has bounced on the other side of the fence! In any case it whet the appetite for a shootout the following day, and Walshy was ceremoniously inducted into the Milkshake Cup group for all eternity!
 
-The Gilling Castle website has a very helpful handicap calculator! So no excuses this year; it's legit! Ali and Pin get two shots per hole.
+import ampleforth from './photos/PHOTO-2024-09-10-20-01-23 3.jpg'
 
-<HandicapTable />
-
-### Scoring
-
-Anyone with an odd number of shots (Mike and Tom) gets the extra shot on the back nine. This is outrageous as it means Tom gets a shot going up the last. But that is how the scorecard shakes down!
-
-There is a different par for Ladies and Men so this year we're going to have to do **net score to par**. Don't worry, I have [made a handy thing](https://docs.google.com/spreadsheets/d/1lvgWl71GMc_8VAHN85Iu9HH5NVwKFuPflPzX-HhyrgI/edit?gid=0#gid=0) to work it all out!
-
-A playoff has the potential to get complicated: we'll use the hole's stroke index and the player's handocap to calculate their **net** score.
-
-Ties at halfway will be on hole-by-hole countback. Again we might need stroke index (net score to par via last hole, working back to first hole).
-
-### Trophy presentation
-
-Will take place directly after the close of play at The Fairfax Arms, Gilling East, which is 0.5 miles from the golf course.
-
-### Dinner
-
-Is booked for 19:30 (thank you Thomas!) at The Moors in Appleton ([directions]()) which is 7 minutes from Kirkbymoorside (or 24 minutes from The Fairfax Arms)
-
-## Sunday &mdash; The Spirit of The Cup Trophy
-
-We're back at Kirkby for 18 holes on Sunday morning! Thank you very much to Sue who pulled some strings to get us some premium tee times 🙏 ❤️
-
-- 08:30
-- 08:40
-- 08:50
-
-Stableford is the format and Jamie is the defending champion!
+<Image
+  className='my-8'
+  src={ampleforth}
+  alt='Good of Tom to change his shirt'
+/>
