@@ -1,11 +1,44 @@
 'use client'
 
 import stats from '../../_data/stats.json'
+import scores2025 from '../../_data/2025-scores.json'
 import * as d3 from 'd3'
 
 export default function Page() {
-  const yearMap = d3.group(stats, (d) => d.year)
-  const playerMap = d3.group(stats, (d) => d.player)
+  // Process 2025 data from hole-by-hole scores
+  const process2025Data = () => {
+    const players = [...new Set(scores2025.map((d) => d.player))]
+    const playerTotals = players.map((player) => {
+      const playerData = scores2025.filter((d) => d.player === player)
+      // net_to_par is cumulative, so the final hole (18) has the total
+      const finalHole = playerData.find((d) => d.hole === 18)
+      const netToPar = finalHole?.net_to_par || 0
+      const gross = playerData.reduce((sum, hole) => sum + hole.gross, 0)
+      const handicap = playerData[0].handicap
+
+      return {
+        year: 2025,
+        player: player,
+        netToPar: netToPar,
+        netScore: gross - handicap,
+        handicap: handicap,
+      }
+    })
+
+    // Sort by net to par and assign places
+    return playerTotals
+      .sort((a, b) => a.netToPar - b.netToPar)
+      .map((player, index) => ({
+        ...player,
+        place: index + 1,
+      }))
+  }
+
+  const stats2025 = process2025Data()
+  const allStats = [...stats, ...stats2025]
+
+  const yearMap = d3.group(allStats, (d) => d.year)
+  const playerMap = d3.group(allStats, (d) => d.player)
 
   const years = Array.from(yearMap.keys())
   const players = Array.from(playerMap.keys())
@@ -33,14 +66,16 @@ export default function Page() {
 
       const runners = scores.length
       const winner = scores.find((d) => d?.place === 1)?.player || null
+
+      // Fix winning margin calculation - should compare netToPar, not netScore
+      const winnerScore = scores.find((d) => d?.place === 1)?.netToPar
+      const secondPlaceScore = scores.find((d) => d?.place === 2)?.netToPar
       const winningMargin =
-        scores.length > 1 &&
-        scores[0]?.netScore !== undefined &&
-        scores[1]?.netScore !== undefined
-          ? scores[1].netScore - scores[0].netScore
+        winnerScore !== undefined && secondPlaceScore !== undefined
+          ? secondPlaceScore - winnerScore
           : null
-      const winningScore = d3.min(scores, (d) => d.netToPar) || null
-      console.log(year, winningScore)
+
+      const winningScore = winnerScore !== undefined ? winnerScore : null
       const fieldQuality = d3.mean(scores, (d) => d.netToPar) || null
 
       return {
@@ -59,13 +94,15 @@ export default function Page() {
       <div className='animate-in flex flex-col gap-4 lg:gap-8'>
         <h2 className='text-2xl font-bold'>Stats</h2>
         <p>
-          {stats.length} results from {players.length} players across{' '}
+          {allStats.length} results from {players.length} players across{' '}
           {years.length} years
         </p>
         <p>Lowest winning net score: -2 (Samuel Smith, 2020)</p>
         <p>Greatest margin of victory: 9 (Samuel Smith, 2020)</p>
         <p>Tightest margin of victory: Playoff! (Alan Mead, 2022)</p>
-        <p>Worst defence of title: 7th (Sam Mead, 2022)</p>
+        <p>
+          Worst defence of title: 7th (Sam Mead, 2022; Alistair Shepherd, 2025)
+        </p>
         <p>
           Biggest year on year improvement: 9th to CHAMP (Harry Langdon,
           2022-2023; Alistair Shepherd 2023-2024)
