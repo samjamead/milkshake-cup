@@ -5,7 +5,6 @@ import * as d3 from 'd3'
 
 export default function Page() {
   const yearMap = d3.group(stats, (d) => d.year)
-  console.log(yearMap)
   const playerMap = d3.group(stats, (d) => d.player)
 
   const years = Array.from(yearMap.keys())
