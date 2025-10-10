@@ -1,5 +1,5 @@
-import honours from '../../_data/honours.json'
-import spiritHonours from '../../_data/spiritHonours.json'
+import honours from '../../../_data/honours.json'
+import spiritHonours from '../../../_data/spiritHonours.json'
 
 export default async function Index() {
   return (

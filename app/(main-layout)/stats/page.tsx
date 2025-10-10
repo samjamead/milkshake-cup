@@ -1,7 +1,7 @@
 'use client'
 
-import stats from '../../_data/stats.json'
-import scores2025 from '../../_data/2025-scores.json'
+import stats from '../../../_data/stats.json'
+import scores2025 from '../../../_data/2025-scores.json'
 import * as d3 from 'd3'
 
 export default function Page() {
@@ -42,6 +42,40 @@ export default function Page() {
 
   const years = Array.from(yearMap.keys())
   const players = Array.from(playerMap.keys())
+
+  // Calculate player statistics
+  const calculatePlayerStats = () => {
+    return Array.from(playerMap.entries())
+      .map(([player, results]) => {
+        const sortedResults = results.sort((a, b) => a.year - b.year)
+        const debutYear = sortedResults[0]?.year
+
+        const bestResult = sortedResults.reduce((best, current) => {
+          if (current.place === undefined) return best
+          if (best.place === undefined) return current
+          return current.place < best.place ? current : best
+        }, sortedResults[0])
+
+        const wins = results.filter((r) => r.place === 1).length
+
+        return {
+          player,
+          tournaments: results.length,
+          debut: debutYear,
+          bestResult: bestResult?.place,
+          bestYear: bestResult?.year,
+          wins,
+        }
+      })
+      .sort((a, b) => {
+        // Sort by wins first, then by best result, then by tournaments played
+        if (a.wins !== b.wins) return b.wins - a.wins
+        if (a.bestResult !== b.bestResult) return a.bestResult - b.bestResult
+        return b.tournaments - a.tournaments
+      })
+  }
+
+  const playerStats = calculatePlayerStats()
 
   const scoreSummaries = years
     .map((year) => {
@@ -107,6 +141,67 @@ export default function Page() {
           Biggest year on year improvement: 9th to CHAMP (Harry Langdon,
           2022-2023; Alistair Shepherd 2023-2024)
         </p>
+
+        <div className='flex flex-col gap-4'>
+          <div className='flex flex-col gap-3'>
+            <h3 className='text-lg font-semibold'>Player Statistics</h3>
+            <p>Individual player performance across all tournaments:</p>
+          </div>
+
+          <div className='rounded border'>
+            <table className='w-full text-sm'>
+              <thead>
+                <tr>
+                  <td className='p-3 pt-4 leading-4'>Player</td>
+                  <td className='p-3 pt-4 text-right leading-4'>Tournaments</td>
+                  <td className='p-3 pt-4 text-right leading-4'>Debut</td>
+                  <td className='p-3 pt-4 text-right leading-4'>Best Result</td>
+                  <td className='p-3 pt-4 text-right leading-4'>Wins</td>
+                </tr>
+              </thead>
+              <tbody>
+                {playerStats.map((player) => (
+                  <tr
+                    key={player.player}
+                    className='border-t border-foreground/20'
+                  >
+                    <td className='px-3 py-2'>{player.player}</td>
+                    <td className='px-3 py-2 text-right'>
+                      {player.tournaments}
+                    </td>
+                    <td className='px-3 py-2 text-right'>{player.debut}</td>
+                    <td className='px-3 py-2 text-right'>
+                      {player.bestResult === 1 ? (
+                        <span className='font-semibold text-yellow-600'>
+                          🏆 {player.bestResult}st ({player.bestYear})
+                        </span>
+                      ) : player.bestResult === 2 ? (
+                        <span className='font-medium text-gray-600'>
+                          🥈 {player.bestResult}nd ({player.bestYear})
+                        </span>
+                      ) : player.bestResult === 3 ? (
+                        <span className='font-medium text-amber-600'>
+                          🥉 {player.bestResult}rd ({player.bestYear})
+                        </span>
+                      ) : (
+                        `${player.bestResult}th (${player.bestYear})`
+                      )}
+                    </td>
+                    <td className='px-3 py-2 text-right'>
+                      {player.wins > 0 ? (
+                        <span className='font-semibold text-yellow-600'>
+                          {player.wins}
+                        </span>
+                      ) : (
+                        '0'
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
 
         <div className='flex flex-col gap-4'>
           <div className='flex flex-col gap-3'>
