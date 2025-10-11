@@ -19,9 +19,10 @@ export default function AnnualWelcome({
       <div className='relative basis-2/5 rounded-r-md bg-purple-300/20'>
         <Image
           src={image}
-          fill={true}
+          width={400}
+          height={600}
           alt={`The ${year} Champion`}
-          className='rounded-lg border-l-black object-cover'
+          className='h-full w-full rounded-lg border-l-black object-cover'
         />
       </div>
       <div className='flex flex-1 flex-col justify-between gap-8 rounded-l-md bg-purple-300/20 p-5'>
