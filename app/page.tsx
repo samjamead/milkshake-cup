@@ -29,7 +29,7 @@ export default async function Home() {
       <div className='flex flex-col gap-16'>
         <Hero />
 
-        <div className='mx-auto w-full max-w-4xl'>
+        <div className='mx-auto w-full max-w-4xl px-4'>
           {posts && <PostList posts={parsedPosts} />}
         </div>
 
