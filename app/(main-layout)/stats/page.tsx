@@ -27,7 +27,7 @@ export default function Page() {
 
     // Sort by net to par and assign places
     return playerTotals
-      .sort((a, b) => a.netToPar - b.netToPar)
+      .sort((a, b) => (a.netToPar ?? 0) - (b.netToPar ?? 0))
       .map((player, index) => ({
         ...player,
         place: index + 1,
@@ -69,9 +69,10 @@ export default function Page() {
       })
       .sort((a, b) => {
         // Sort by wins first, then by best result, then by tournaments played
-        if (a.wins !== b.wins) return b.wins - a.wins
-        if (a.bestResult !== b.bestResult) return a.bestResult - b.bestResult
-        return b.tournaments - a.tournaments
+        if (a.wins !== b.wins) return (b.wins ?? 0) - (a.wins ?? 0)
+        if (a.bestResult !== b.bestResult)
+          return Number(a.bestResult ?? 999) - Number(b.bestResult ?? 999)
+        return (b.tournaments ?? 0) - (a.tournaments ?? 0)
       })
   }
 
