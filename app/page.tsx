@@ -3,6 +3,7 @@ import { dateStringToBinary } from '@/_utils/helpers'
 import PostList from '@/_components/post-list'
 import extraPosts from '@/_data/posts.json'
 import Hero from '@/_components/hero'
+import Footer from '@/_components/footer'
 
 export const metadata = {
   title: 'The Milkshake Cup',
@@ -25,9 +26,14 @@ export default async function Home() {
 
   return (
     <div className='w-full'>
-      <div className='flex flex-col gap-16 pt-4 md:pt-12 lg:pt-20'>
+      <div className='flex flex-col gap-16'>
         <Hero />
-        {posts && <PostList posts={parsedPosts} />}
+
+        <div className='mx-auto w-full max-w-4xl px-4'>
+          {posts && <PostList posts={parsedPosts} />}
+        </div>
+
+        <Footer />
       </div>
     </div>
   )
