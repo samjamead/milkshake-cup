@@ -9,8 +9,8 @@ import { ArrowRightIcon } from 'lucide-react'
 export const SubtitleBlock = () => {
   const heroLinks = [
     {
-      name: 'Report',
-      link: '/2025',
+      name: 'Schedule',
+      link: '/2026',
     },
     {
       name: 'Honours Board',
@@ -22,8 +22,8 @@ export const SubtitleBlock = () => {
     <div className='gap-2 border-t border-foreground/25 md:grid md:h-40 md:grid-cols-2 md:gap-0 lg:grid-cols-[3fr_2fr]'>
       <div className='border-r border-foreground/25 bg-purple-500/20 px-4 py-6 md:bg-transparent md:py-3'>
         <p className='lg:text-lg lg:font-medium'>
-          Alan wins his third Milkshake Cup. The spirit of the cup is alive and
-          well &ndash; it&apos;s hard to tell which Al is happier!
+          The countdown is on for the 6th of June. Waterbridge Golf Club &ndash;
+          a new course on the rotation for 2026
         </p>
       </div>
       <ul className='border-t border-foreground/25 text-sm md:border-r md:border-t-0'>
@@ -78,12 +78,19 @@ export default function Hero() {
           </div>
           <div className='flex grow flex-col justify-center space-y-2 bg-purple-500/20 p-4'>
             <p className='text-xs uppercase text-foreground/70'>
-              Hoebridge Golf Centre, Surrey
+              WELCOME FROM THE 2025 CHAMPION
             </p>
-            <h2 className='text-xl font-bold leading-tight md:text-4xl'>
-              Congratulations 2025 champion! Alan takes it with a one shot win
-              over Josh and Jamie
+            <h2 className='text-lg font-bold leading-tight md:text-2xl'>
+              ‘And we can be “Heroes”, just for one day’
             </h2>
+            <p>So just remember folks, this is special.</p>
+            <p>Because this is The Milkshake Cup. </p>
+            <p>Stop fussing about handicaps.</p>
+            <p>Break out your A game.</p>
+            <p>And revel in it!</p>
+            <p>Appin, Ali and I are with you in Spirit in 2026.</p>
+            <p>And we’re coming for ya in 2027.</p>
+            <p>Better make this one count!</p>
           </div>
           <div className='hidden lg:block'>
             <SubtitleBlock />
