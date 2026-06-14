@@ -1,8 +1,9 @@
 'use client'
 
-import stats from '@/data/stats.json'
-import scores2025 from '@/data/2025-scores.json'
 import * as d3 from 'd3'
+
+import scores2025 from '@/data/2025-scores.json'
+import stats from '@/data/stats.json'
 
 export default function Page() {
   // Process 2025 data from hole-by-hole scores

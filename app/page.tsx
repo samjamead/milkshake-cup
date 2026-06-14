@@ -1,9 +1,9 @@
-import { fetchPosts } from '@/lib/fetchPosts'
-import { dateStringToBinary } from '@/lib/helpers'
+import Footer from '@/components/footer'
+import Hero from '@/components/hero'
 import PostList from '@/components/post-list'
 import extraPosts from '@/data/posts.json'
-import Hero from '@/components/hero'
-import Footer from '@/components/footer'
+import { fetchPosts } from '@/lib/fetchPosts'
+import { dateStringToBinary } from '@/lib/helpers'
 
 export const metadata = {
   title: 'The Milkshake Cup',

@@ -1,6 +1,7 @@
-import champ from '@/public/img/2025champ.jpeg'
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
+
+import champ from '@/public/img/2025champ.jpeg'
 import logoWhite from '@/public/logo_white.svg'
 
 export default function Hero() {

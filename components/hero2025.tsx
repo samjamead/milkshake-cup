@@ -1,6 +1,8 @@
-import champ from '@/public/img/2024champ.jpeg'
-import { QuoteIcon } from 'lucide-react'
 import Image from 'next/image'
+
+import { QuoteIcon } from 'lucide-react'
+
+import champ from '@/public/img/2024champ.jpeg'
 
 export default function Hero() {
   return (

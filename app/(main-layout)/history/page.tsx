@@ -1,8 +1,8 @@
-import { fetchPosts } from '@/lib/fetchPosts'
-import { dateStringToBinary } from '@/lib/helpers'
+import HistoryFilter from '@/components/history-filter'
 import PostList from '@/components/post-list'
 import extraPosts from '@/data/posts.json'
-import HistoryFilter from '@/components/history-filter'
+import { fetchPosts } from '@/lib/fetchPosts'
+import { dateStringToBinary } from '@/lib/helpers'
 
 export const metadata = {
   title: 'History of The Milkshake Cup',

@@ -1,8 +1,10 @@
-import champ from '@/public/img/2025champ.jpeg'
-import Link from 'next/link'
 import Image from 'next/image'
-import logoWhite from '@/public/logo_white.svg'
+import Link from 'next/link'
+
 import { ArrowRightIcon } from 'lucide-react'
+
+import champ from '@/public/img/2025champ.jpeg'
+import logoWhite from '@/public/logo_white.svg'
 
 // inspired by https://www.theguardian.com/news/ng-interactive/2025/sep/16/song-chun-zhu-why-one-of-the-worlds-most-brilliant-ai-scientists-left-the-us-for-china
 

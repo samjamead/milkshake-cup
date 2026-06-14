@@ -1,7 +1,7 @@
 export default function MetapostFooter({
   currentPage,
 }: {
-  currentPage: string;
+  currentPage: string
 }) {
   const metaposts = [
     {
@@ -16,12 +16,12 @@ export default function MetapostFooter({
       name: 'Contact',
       link: '/contact',
     },
-  ];
+  ]
 
   return (
-    <div className='mt-12 py-12 border-t-foreground/20'>
+    <div className='mt-12 border-t-foreground/20 py-12'>
       <div className='mb-8'>
-        <span className='px-2 py-1 text-sm rounded bg-purple-500/30'>
+        <span className='rounded bg-purple-500/30 px-2 py-1 text-sm'>
           Metaposts
         </span>
       </div>
@@ -36,9 +36,9 @@ export default function MetapostFooter({
                   {post.name}
                 </a>
               </p>
-            );
+            )
           })}
       </div>
     </div>
-  );
+  )
 }

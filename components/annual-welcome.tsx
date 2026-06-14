@@ -1,6 +1,8 @@
-import { QuoteIcon } from 'lucide-react'
 import { StaticImport } from 'next/dist/shared/lib/get-img-props'
 import Image from 'next/image'
+
+import { QuoteIcon } from 'lucide-react'
+
 import trophy from '@/public/img/2022trophy.jpeg'
 
 export default function AnnualWelcome({

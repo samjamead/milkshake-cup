@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState, useCallback } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 type MessageRowProps = {
   message: string
@@ -25,28 +25,31 @@ export default function Leaderboard() {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [isError, setIsError] = useState<boolean>(false)
 
-  const updateLeaderboard = async () => {
+  const updateLeaderboard = useCallback(async () => {
     setIsError(false)
     setIsLoading(true)
-    setTimeout(async () => {
-      try {
-        const response = await fetch(
-          'https://opensheet.elk.sh/1HHomcApRYcviI5uLXkKXPNKRs12J1InhSwwU1_bDatg/liveleader'
-        )
-        const data = await response.json()
-        setLeaderboard(data)
-      } catch (error) {
-        console.error('Error updating leaderboard:', error)
-        setIsError(true)
-      } finally {
-        setIsLoading(false)
-      }
-    }, 800)
-  }
+
+    try {
+      const response = await fetch(
+        'https://opensheet.elk.sh/1HHomcApRYcviI5uLXkKXPNKRs12J1InhSwwU1_bDatg/liveleader'
+      )
+      const data = await response.json()
+      setLeaderboard(data)
+    } catch (error) {
+      console.error('Error updating leaderboard:', error)
+      setIsError(true)
+    } finally {
+      setIsLoading(false)
+    }
+  }, [])
 
   useEffect(() => {
-    updateLeaderboard()
-  }, [])
+    const timeout = setTimeout(() => {
+      void updateLeaderboard()
+    }, 800)
+
+    return () => clearTimeout(timeout)
+  }, [updateLeaderboard])
 
   return (
     <div className='animate-in flex flex-col gap-6 py-6 lg:gap-12 lg:py-12'>

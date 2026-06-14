@@ -1,4 +1,5 @@
 import { Suspense } from 'react'
+
 import Loading from '@/app/loading'
 import Footer from '@/components/footer'
 import Header from '@/components/main-header'
