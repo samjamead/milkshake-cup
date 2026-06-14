@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <div className='flex flex-col items-stretch justify-between border-2 border-black lg:flex-row-reverse'>
       <div className='flex flex-1 flex-col justify-between gap-8 rounded-t-md bg-purple-300/20 p-4 pb-8 md:rounded-r-md md:p-6'>
-        <h2 className='rounded bg-purple-500/10 p-3 text-center text-xs font-bold uppercase tracking-wider lg:text-sm'>
+        <h2 className='rounded-sm bg-purple-500/10 p-3 text-center text-xs font-bold tracking-wider uppercase lg:text-sm'>
           Welcome from the defending champion
         </h2>
         <div className='flex flex-col gap-4'>
@@ -31,7 +31,7 @@ export default function Hero() {
           </p>{' '}
           <p>For the rest of you - play well and look for the spirit!</p>
         </div>
-        <p className='text-sm text-foreground/80'>
+        <p className='text-foreground/80 text-sm'>
           &mdash;Alistair Shepherd, 2024 Milkshake Cup Champion
         </p>
       </div>

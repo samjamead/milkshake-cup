@@ -150,7 +150,7 @@ export default function Page() {
             <p>Individual player performance across all tournaments:</p>
           </div>
 
-          <div className='rounded border'>
+          <div className='rounded-sm border'>
             <table className='w-full text-sm'>
               <thead>
                 <tr>
@@ -165,7 +165,7 @@ export default function Page() {
                 {playerStats.map((player) => (
                   <tr
                     key={player.player}
-                    className='border-t border-foreground/20'
+                    className='border-foreground/20 border-t'
                   >
                     <td className='px-3 py-2'>{player.player}</td>
                     <td className='px-3 py-2 text-right'>
@@ -209,12 +209,12 @@ export default function Page() {
           <div className='flex flex-col gap-3'>
             <h3 className='text-lg font-semibold'>What wins?</h3>
             <p>Play to your handicap and you&apos;ll be in with a chance:</p>
-            <p className='text-sm text-foreground/80'>
+            <p className='text-foreground/80 text-sm'>
               All scores are net to par
             </p>
           </div>
 
-          <div className='rounded border'>
+          <div className='rounded-sm border'>
             <table className='w-full text-sm'>
               <thead>
                 <tr>
@@ -237,7 +237,7 @@ export default function Page() {
                   return (
                     <tr
                       key={entry.year}
-                      className='border-t border-foreground/20'
+                      className='border-foreground/20 border-t'
                     >
                       <td className='px-3 py-2'>{entry.year}</td>
                       <td className='px-3 py-2'>{entry.winner}</td>

@@ -53,7 +53,7 @@ export default function SolariBoard({
       {!drawDone ? (
         <button
           onClick={startDraw}
-          className='flex h-8 w-28 items-center justify-center rounded bg-purple-500 px-2 py-1.5 text-center text-sm text-foreground transition duration-300 hover:bg-purple-600'
+          className='text-foreground flex h-8 w-28 items-center justify-center rounded-sm bg-purple-500 px-2 py-1.5 text-center text-sm transition duration-300 hover:bg-purple-600'
           disabled={drawing || currentNameIndex >= selectedNames.length}
         >
           {drawing ? <Loader className='animate-spin' size={16} /> : 'Draw'}

@@ -7,7 +7,7 @@ type MessageRowProps = {
 }
 
 const MessageRow = ({ message }: MessageRowProps) => (
-  <tr className='border-t border-foreground/50'>
+  <tr className='border-foreground/50 border-t'>
     <td colSpan={4} className='py-6 text-center text-sm'>
       {message}
     </td>
@@ -57,7 +57,7 @@ export default function Leaderboard() {
         <h2 className='text-xl font-semibold md:text-2xl'>Live Leaderboard</h2>
         <button
           type='button'
-          className='rounded border px-3 py-1 text-sm disabled:opacity-50'
+          className='rounded-sm border px-3 py-1 text-sm disabled:opacity-50'
           onClick={() => updateLeaderboard()}
           disabled={isLoading}
           aria-label='Refresh leaderboard'
@@ -66,7 +66,7 @@ export default function Leaderboard() {
         </button>
       </div>
 
-      <div className='w-full rounded-md border border-foreground/50'>
+      <div className='border-foreground/50 w-full rounded-md border'>
         <table className='w-full'>
           <thead>
             <tr>
@@ -91,7 +91,7 @@ export default function Leaderboard() {
                 .map((row, index) => (
                   <tr
                     key={row.player}
-                    className='border-t border-foreground/50'
+                    className='border-foreground/50 border-t'
                   >
                     <td className='p-3 md:pl-5'>{index + 1}</td>
                     <td className='p-3'>{row.player}</td>

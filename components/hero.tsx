@@ -21,19 +21,19 @@ export const SubtitleBlock = () => {
   ]
 
   return (
-    <div className='gap-2 border-t border-foreground/25 md:grid md:h-40 md:grid-cols-2 md:gap-0 lg:grid-cols-[3fr_2fr]'>
-      <div className='border-r border-foreground/25 bg-purple-500/20 px-4 py-6 md:bg-transparent md:py-3'>
+    <div className='border-foreground/25 gap-2 border-t md:grid md:h-40 md:grid-cols-2 md:gap-0 lg:grid-cols-[3fr_2fr]'>
+      <div className='border-foreground/25 border-r bg-purple-500/20 px-4 py-6 md:bg-transparent md:py-3'>
         <p className='lg:text-lg lg:font-medium'>
           The countdown is on for the 6th of June. Waterbridge Golf Club &ndash;
           a new course on the rotation for 2026
         </p>
       </div>
-      <ul className='border-t border-foreground/25 text-sm md:border-r md:border-t-0'>
+      <ul className='border-foreground/25 border-t text-sm md:border-t-0 md:border-r'>
         {heroLinks.map(({ name, link }) => {
           return (
             <li
               key={name}
-              className='first-of-type:border-b first-of-type:border-foreground/25'
+              className='first-of-type:border-foreground/25 first-of-type:border-b'
             >
               <Link
                 href={link}
@@ -54,14 +54,14 @@ export const SubtitleBlock = () => {
 
 export default function Hero() {
   return (
-    <div className='flex flex-col border-b border-foreground/25 lg:flex-row'>
+    <div className='border-foreground/25 flex flex-col border-b lg:flex-row'>
       <div className='hidden grow flex-col justify-between lg:flex'>
-        <div className='h-40 border-b border-foreground/25' />
-        <div className='h-40 border-t border-foreground/25' />
+        <div className='border-foreground/25 h-40 border-b' />
+        <div className='border-foreground/25 h-40 border-t' />
       </div>
       <div className='w-full max-w-6xl md:grid md:grid-cols-2 lg:grid-cols-[1fr_auto]'>
         <div className='flex flex-col justify-between'>
-          <div className='border-b border-foreground/25 p-4 md:h-40'>
+          <div className='border-foreground/25 border-b p-4 md:h-40'>
             <Link
               href='/'
               className='group flex items-center justify-start gap-4'
@@ -79,10 +79,10 @@ export default function Hero() {
             </Link>
           </div>
           <div className='flex grow flex-col justify-center space-y-2 bg-purple-500/20 p-4'>
-            <p className='text-xs uppercase text-foreground/70'>
+            <p className='text-foreground/70 text-xs uppercase'>
               WELCOME FROM THE 2025 CHAMPION
             </p>
-            <h2 className='text-lg font-bold leading-tight md:text-2xl'>
+            <h2 className='text-lg leading-tight font-bold md:text-2xl'>
               ‘And we can be “Heroes”, just for one day’
             </h2>
             <p>So just remember folks, this is special.</p>
@@ -109,8 +109,8 @@ export default function Hero() {
         </div>
       </div>
       <div className='hidden grow flex-col justify-between lg:flex'>
-        <div className='h-40 border-b border-foreground/25' />
-        <div className='h-40 border-t border-foreground/25' />
+        <div className='border-foreground/25 h-40 border-b' />
+        <div className='border-foreground/25 h-40 border-t' />
       </div>
       <div className='lg:hidden'>
         <SubtitleBlock />

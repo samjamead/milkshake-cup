@@ -21,12 +21,12 @@ export default function Quote({
 
   return (
     <div className='relative max-w-prose text-sm'>
-      <p className='mb-1 font-light leading-7'>
+      <p className='mb-1 leading-7 font-light'>
         {quote.slice(0, isOpen ? quote.length : 150)}
 
         {!isOpen && quote.length > 150 && (
           <button
-            className='ml-1 inline-block rounded bg-gray-600 p-1 align-middle text-xs leading-[6px]'
+            className='ml-1 inline-block rounded-sm bg-gray-600 p-1 align-middle text-xs leading-[6px]'
             onClick={toggleOpen}
           >
             •••
@@ -51,7 +51,7 @@ export default function Quote({
 
       {isOpen && (
         <button
-          className='absolute bottom-0 right-0 inline-block rounded bg-gray-600 p-1.5'
+          className='absolute right-0 bottom-0 inline-block rounded-sm bg-gray-600 p-1.5'
           onClick={toggleOpen}
         >
           <Minimize2 size={16} />

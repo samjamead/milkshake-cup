@@ -1,43 +1,65 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-:root {
-  --foreground: 200 20% 96%;
-  --background: 221 28% 8%;
-  --card-bg: 221 28% 17%;
+@theme {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card-bg: hsl(var(--card-bg));
 }
 
-@media (prefers-color-scheme: dark) {
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@layer utilities {
   :root {
     --foreground: 200 20% 96%;
     --background: 221 28% 8%;
     --card-bg: 221 28% 17%;
   }
-}
 
-body {
-  color: hsl(var(--foreground));
-  background: hsl(var(--background));
-}
-
-.animate-in {
-  animation: animateIn 0.3s ease 0.15s both;
-}
-
-@keyframes animateIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --foreground: 200 20% 96%;
+      --background: 221 28% 8%;
+      --card-bg: 221 28% 17%;
+    }
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  body {
+    color: hsl(var(--foreground));
+    background: hsl(var(--background));
+  }
+
+  .animate-in {
+    animation: animateIn 0.3s ease 0.15s both;
+  }
+
+  @keyframes animateIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

@@ -19,9 +19,9 @@ export default function MetapostFooter({
   ]
 
   return (
-    <div className='mt-12 border-t-foreground/20 py-12'>
+    <div className='border-t-foreground/20 mt-12 py-12'>
       <div className='mb-8'>
-        <span className='rounded bg-purple-500/30 px-2 py-1 text-sm'>
+        <span className='rounded-sm bg-purple-500/30 px-2 py-1 text-sm'>
           Metaposts
         </span>
       </div>
