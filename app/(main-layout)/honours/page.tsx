@@ -20,12 +20,12 @@ export default async function Index() {
               </tr>
             </thead>
             <tbody>
-              <tr className='even:bg-foreground/5'>
+              {/* <tr className='even:bg-foreground/5'>
                 <td className='p-2'>2026</td>
                 <td className='p-2'>Waterbridge Golf Club</td>
                 <td className='p-2 font-medium'></td>
                 <td className='hidden p-2 md:table-cell'></td>
-              </tr>
+              </tr> */}
               {honours.map((entry) => (
                 <tr key={entry.year} className='even:bg-foreground/5'>
                   <td className='p-2'>{entry.year}</td>
@@ -54,12 +54,12 @@ export default async function Index() {
               </tr>
             </thead>
             <tbody>
-              <tr className='even:bg-foreground/5'>
+              {/* <tr className='even:bg-foreground/5'>
                 <td className='p-2'>2026</td>
                 <td className='p-2'>Royal North Devon Golf Club</td>
                 <td className='p-2 font-medium'></td>
                 <td className='hidden p-2 md:table-cell'></td>
-              </tr>
+              </tr> */}
               {spiritHonours.map((entry) => (
                 <tr key={entry.year} className='even:bg-foreground/5'>
                   <td className='p-2'>{entry.year}</td>

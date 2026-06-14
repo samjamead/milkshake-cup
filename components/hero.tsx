@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import { ArrowRightIcon } from 'lucide-react'
 
-import champ from '@/public/img/2025champ.jpeg'
+import champ from '@/public/img/2026champ.jpeg'
 import logoWhite from '@/public/logo_white.svg'
 
 // inspired by https://www.theguardian.com/news/ng-interactive/2025/sep/16/song-chun-zhu-why-one-of-the-worlds-most-brilliant-ai-scientists-left-the-us-for-china
@@ -11,7 +11,7 @@ import logoWhite from '@/public/logo_white.svg'
 export const SubtitleBlock = () => {
   const heroLinks = [
     {
-      name: 'Schedule',
+      name: '2026 Report',
       link: '/2026',
     },
     {
@@ -24,8 +24,7 @@ export const SubtitleBlock = () => {
     <div className='border-foreground/25 gap-2 border-t md:grid md:h-40 md:grid-cols-2 md:gap-0 lg:grid-cols-[3fr_2fr]'>
       <div className='border-foreground/25 border-r bg-purple-500/20 px-4 py-6 md:bg-transparent md:py-3'>
         <p className='lg:text-lg lg:font-medium'>
-          The countdown is on for the 6th of June.a Waterbridge Golf Club
-          &ndash; a new course on the rotation for 2026
+          See you next year in Northumberland, the country with the lowest population density in the UK. Can&apos;t wait!
         </p>
       </div>
       <ul className='border-foreground/25 border-t text-sm md:border-t-0 md:border-r'>
@@ -78,21 +77,11 @@ export default function Hero() {
               </span>
             </Link>
           </div>
-          <div className='flex grow flex-col justify-center space-y-2 bg-purple-500/20 p-4'>
-            <p className='text-foreground/70 text-xs uppercase'>
-              WELCOME FROM THE 2025 CHAMPION
-            </p>
+          <div className='flex grow flex-col justify-center space-y-6 bg-purple-500/20 p-4'>
             <h2 className='text-lg leading-tight font-bold md:text-2xl'>
-              ‘And we can be “Heroes”, just for one day’
+              TRAIN TRACK JACK WINS BY TWO
             </h2>
-            <p>So just remember folks, this is special.</p>
-            <p>Because this is The Milkshake Cup. </p>
-            <p>Stop fussing about handicaps.</p>
-            <p>Break out your A game.</p>
-            <p>And revel in it!</p>
-            <p>Appin, Ali and I are with you in Spirit in 2026.</p>
-            <p>And we’re coming for ya in 2027.</p>
-            <p>Better make this one count!</p>
+            <p className='text-xl'>A new name on the trophy! Jack Walsh wins on debut by holding off all challengers in the final round six-ball...</p>
           </div>
           <div className='hidden lg:block'>
             <SubtitleBlock />
