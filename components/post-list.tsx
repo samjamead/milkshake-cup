@@ -1,12 +1,15 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { PostWithBinaryDate } from '@/_utils/types'
+import { useState } from 'react'
+
 import Link from 'next/link'
-import Quote from './quote'
 import { useSearchParams } from 'next/navigation'
-import { ArrowUpRight } from 'lucide-react'
+
 import * as d3 from 'd3'
+import { ArrowUpRight } from 'lucide-react'
+
+import Quote from '@/components/quote'
+import { PostWithBinaryDate } from '@/lib/types'
 
 export default function PostList({ posts }: { posts: PostWithBinaryDate[] }) {
   const searchParams = useSearchParams()
@@ -15,14 +18,9 @@ export default function PostList({ posts }: { posts: PostWithBinaryDate[] }) {
 
   const category = searchParams.get('category')
 
-  const [postList, setPostList] = useState<PostWithBinaryDate[]>(posts)
-
-  useEffect(() => {
-    const filteredPosts = posts.filter((post) =>
-      category ? post.category === category : post
-    )
-    setPostList(filteredPosts)
-  }, [category, posts])
+  const postList = posts.filter((post) =>
+    category ? post.category === category : post
+  )
 
   return (
     <ul className='flex flex-col gap-12 lg:gap-8'>
@@ -46,6 +44,7 @@ export default function PostList({ posts }: { posts: PostWithBinaryDate[] }) {
                 <a
                   href={post.externalLink}
                   target='_blank'
+                  rel='noreferrer'
                   className='underline'
                 >
                   {post.title}

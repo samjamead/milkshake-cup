@@ -4,9 +4,10 @@ export const metadata = {
   category: 'Writeups',
 }
 
-import PostHero from '@/_components/post-hero'
-import AnnualWelcome from '@/_components/annual-welcome'
 import Image from 'next/image'
+
+import AnnualWelcome from '@/components/annual-welcome'
+import PostHero from '@/components/post-hero'
 
 <PostHero metadata={metadata} />
 
@@ -19,7 +20,7 @@ export function ImageWithCaption({ src, caption }) {
   )
 }
 
-import defendingChamp from '../2020/photos/champ.jpeg'
+import defendingChamp from '@/app/(main-layout)/(posts)/2020/photos/champ.jpeg'
 
 <AnnualWelcome name='Samuel Smith' year='2020' image={defendingChamp}>
   The Milkshake Cup. It's more than a competition, it's a tradition. Those lucky
@@ -39,7 +40,7 @@ I can only hope for Jock's sake that Stuart didn't overhear such slander - and I
 
 From [the photos](https://photos.google.com/share/AF1QipPcWE_7G2ODDA_q0UZbvSdzZFM7OqyWzlAbFRrIjV0hGJu2azn7Quir_HNtVVfiTQ?key=S1RocjZoc2xpdkt0ZFIxbTJ5b2lQM0FhSk5PUTl3) (thank you Samuel, fab work behind the camera) it does look like we started in coats but finished in glorious Devon sunshine. I have another half memory that collectively we smashed the record for birdies in a Milkshake Cup, and by some margin! Harry birdied the 8th on both rounds, and Pin threw a dart into the treacherous 6th to join the twos club in style:
 
-import dart from './photos/dart.jpeg'
+import dart from '@/app/(main-layout)/(posts)/2021/photos/dart.jpeg'
 
 <ImageWithCaption src={dart} caption='Easy game, this' />
 

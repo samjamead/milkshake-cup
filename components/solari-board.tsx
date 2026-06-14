@@ -1,7 +1,8 @@
 'use client'
 
+import { useState } from 'react'
+
 import { Loader } from 'lucide-react'
-import { useState, useEffect } from 'react'
 
 type RandomDrawProps = {
   names: string[]
@@ -19,13 +20,6 @@ export default function SolariBoard({
   const [currentNameIndex, setCurrentNameIndex] = useState<number>(0)
   const [currentNames, setCurrentNames] = useState<string[]>(['', '', ''])
   const [drawing, setDrawing] = useState<boolean>(false)
-
-  useEffect(() => {
-    if (drawDone) {
-      setCurrentNames(selectedNames)
-      setCurrentNameIndex(selectedNames.length)
-    }
-  }, [drawDone, selectedNames])
 
   const startDraw = () => {
     if (drawing || currentNameIndex >= selectedNames.length) return
@@ -59,7 +53,7 @@ export default function SolariBoard({
       {!drawDone ? (
         <button
           onClick={startDraw}
-          className='flex h-8 w-28 items-center justify-center rounded bg-purple-500 px-2 py-1.5 text-center text-sm text-foreground transition duration-300 hover:bg-purple-600'
+          className='text-foreground flex h-8 w-28 items-center justify-center rounded-sm bg-purple-500 px-2 py-1.5 text-center text-sm transition duration-300 hover:bg-purple-600'
           disabled={drawing || currentNameIndex >= selectedNames.length}
         >
           {drawing ? <Loader className='animate-spin' size={16} /> : 'Draw'}
@@ -67,9 +61,15 @@ export default function SolariBoard({
       ) : (
         <div className='w-28' />
       )}
-      <p className='w-24'>{currentNames[0] || 'Player 1'}</p>
-      <p className='w-24'>{currentNames[1] || 'Player 2'}</p>
-      <p className='w-24'>{currentNames[2] || 'Player 3'}</p>
+      <p className='w-24'>
+        {(drawDone ? selectedNames : currentNames)[0] || 'Player 1'}
+      </p>
+      <p className='w-24'>
+        {(drawDone ? selectedNames : currentNames)[1] || 'Player 2'}
+      </p>
+      <p className='w-24'>
+        {(drawDone ? selectedNames : currentNames)[2] || 'Player 3'}
+      </p>
     </div>
   )
 }

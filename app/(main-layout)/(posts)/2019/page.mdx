@@ -4,10 +4,11 @@ export const metadata = {
   category: 'Writeups',
 }
 
-import PostHero from '@/_components/post-hero'
-import AnnualWelcome from '@/_components/annual-welcome'
 import Image from 'next/image'
-import thomas from './photos/thomas.jpg'
+
+import thomas from '@/app/(main-layout)/(posts)/2019/photos/thomas.jpg'
+import AnnualWelcome from '@/components/annual-welcome'
+import PostHero from '@/components/post-hero'
 
 export function ImageWithCaption({ src, caption }) {
   return (
@@ -35,7 +36,7 @@ export function ImageWithCaption({ src, caption }) {
 
 The 2019 edition of The Milkshake Cup was a tightly fought contest held in glorious September sunshine. Excitement reached fever-pitch as the competitors arrived at the course, with weeks of preparation culminating in first-tee jitters. Unanswered questions filled the nervous chatter. Why was it so <em>hot</em>?! Would H. P. Langdon's train be there on time? And even if he made it, would he be so hungover he wouldn't be able to putt straight?
 
-import twoTrains from './photos/twotrains.jpeg'
+import twoTrains from '@/app/(main-layout)/(posts)/2019/photos/twotrains.jpeg'
 
 <ImageWithCaption src={twoTrains} caption='Harry: A tale of two trains' />
 
@@ -43,12 +44,12 @@ In the end, we needn't have worried. Practice swings were swung, warmup putts we
 
 "May the odds be ever in your favour", he offered, as parting advice to his fellow competitors. "Now keep your eyes on this one!"
 
-import tomPutt from './photos/tomputt.jpg'
-import criCri from './photos/cricri.jpg'
-import tomChip from './photos/tomchip.jpg'
-import tc2 from './photos/tc2.jpeg'
-import greg3 from './photos/greg3.jpeg'
-import pin from './photos/pin.jpg'
+import criCri from '@/app/(main-layout)/(posts)/2019/photos/cricri.jpg'
+import greg3 from '@/app/(main-layout)/(posts)/2019/photos/greg3.jpeg'
+import pin from '@/app/(main-layout)/(posts)/2019/photos/pin.jpg'
+import tc2 from '@/app/(main-layout)/(posts)/2019/photos/tc2.jpeg'
+import tomChip from '@/app/(main-layout)/(posts)/2019/photos/tomchip.jpg'
+import tomPutt from '@/app/(main-layout)/(posts)/2019/photos/tomputt.jpg'
 
 With a swoosh and a divot, the champ wobbled one down there, safe and dry.
 Phew! After the champ came the challengers: The Winning Sticks&#x2122; flashed
@@ -210,12 +211,12 @@ off the trophy?! We can't let him win three years in a row!
   </tbody>
 </table>
 
-import scorecard1 from './photos/scorecard1.jpg'
-import scorecard2 from './photos/scorecard2.jpg'
-import scorecard3 from './photos/scorecard3.jpg'
-import scorecard4 from './photos/scorecard4.jpg'
-import scorecard5 from './photos/scorecard5.jpg'
-import scorecard6 from './photos/scorecard6.jpg'
+import scorecard1 from '@/app/(main-layout)/(posts)/2019/photos/scorecard1.jpg'
+import scorecard2 from '@/app/(main-layout)/(posts)/2019/photos/scorecard2.jpg'
+import scorecard3 from '@/app/(main-layout)/(posts)/2019/photos/scorecard3.jpg'
+import scorecard4 from '@/app/(main-layout)/(posts)/2019/photos/scorecard4.jpg'
+import scorecard5 from '@/app/(main-layout)/(posts)/2019/photos/scorecard5.jpg'
+import scorecard6 from '@/app/(main-layout)/(posts)/2019/photos/scorecard6.jpg'
 
 <h2>Scorecards</h2>
 

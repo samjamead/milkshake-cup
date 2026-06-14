@@ -1,4 +1,4 @@
-import './posts.css'
+import '@/app/(main-layout)/(posts)/posts.css'
 
 export default function Layout({
   children,
@@ -7,7 +7,7 @@ export default function Layout({
 }>) {
   return (
     <div className='w-full'>
-      <article className='pb-24 pt-16'>{children}</article>
+      <article className='pt-16 pb-24'>{children}</article>
     </div>
   )
 }

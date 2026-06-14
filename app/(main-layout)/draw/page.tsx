@@ -1,4 +1,4 @@
-import SolariBoard from '@/_components/solari-board'
+import SolariBoard from '@/components/solari-board'
 
 export default async function DrawPage() {
   return (

@@ -4,13 +4,14 @@ export const metadata = {
   category: 'Writeups',
 }
 
-import PostHero from '@/_components/post-hero'
 import Image from 'next/image'
-import teamPhoto from './photos/teamPhoto.jpeg'
-import harryPutt1 from './photos/harryPutt1.jpeg'
-import harryPutt2 from './photos/harryPutt2.jpeg'
-import harryPutt3 from './photos/harryPutt3.jpeg'
-import harryPutt4 from './photos/harryPutt4.jpeg'
+
+import harryPutt1 from '@/app/(main-layout)/(posts)/2023/photos/harryPutt1.jpeg'
+import harryPutt2 from '@/app/(main-layout)/(posts)/2023/photos/harryPutt2.jpeg'
+import harryPutt3 from '@/app/(main-layout)/(posts)/2023/photos/harryPutt3.jpeg'
+import harryPutt4 from '@/app/(main-layout)/(posts)/2023/photos/harryPutt4.jpeg'
+import teamPhoto from '@/app/(main-layout)/(posts)/2023/photos/teamPhoto.jpeg'
+import PostHero from '@/components/post-hero'
 
 <PostHero metadata={metadata} />
 
@@ -47,31 +48,31 @@ Things were looking tight at the turn, just 4 shots separating the top 5 on the 
 
 Group 3 set off looking for a miracle. Jim was a long way back but he was feeling good, and had great company with Mike and Pin.
 
-import group3 from './photos/group3.jpeg'
+import group3 from '@/app/(main-layout)/(posts)/2023/photos/group3.jpeg'
 
 <Image src={group3} alt='Group 3' className='my-8' />
 
 The middle group were looking a little happier. Harry only missed the top group by a shot, and Tom, well, you don't get all those stars on your chest by duffing it around in the Milkshake Cup!
 
-import group2 from './photos/group2.jpeg'
+import group2 from '@/app/(main-layout)/(posts)/2023/photos/group2.jpeg'
 
 <Image src={group2} alt='Group 2' className='my-8' />
 
 The last group were hiding in the shade for the time being. Things were heating up at The Village!
 
-import group1 from './photos/group1.jpeg'
+import group1 from '@/app/(main-layout)/(posts)/2023/photos/group1.jpeg'
 
 <Image src={group1} alt='Group 1' className='my-8' />
 
 Josh was feeling good after driving the green at the first, confident that he could reel Sam in, with only two shots the gap at the turn.
 
-import joshHappy from './photos/joshHappy.jpeg'
+import joshHappy from '@/app/(main-layout)/(posts)/2023/photos/joshHappy.jpeg'
 
 <Image src={joshHappy} alt='Josh looking happy' className='my-8' />
 
 But a difficult start to the back 9 saw the challenge fade away...
 
-import joshSad from './photos/joshSad.jpeg'
+import joshSad from '@/app/(main-layout)/(posts)/2023/photos/joshSad.jpeg'
 
 <Image
   src={joshSad}
@@ -81,13 +82,13 @@ import joshSad from './photos/joshSad.jpeg'
 
 The defending champion was right where he wanted to be: firmly in the mix, just needing a steady second round to give himself a chance.
 
-import defendingChamp from './photos/defendingChamp.jpeg'
+import defendingChamp from '@/app/(main-layout)/(posts)/2023/photos/defendingChamp.jpeg'
 
 <Image src={defendingChamp} alt='Defending champ' className='my-8' />
 
 But Alan's charge would fizzle out after a detour through some of the more densely wooded parts of the golf course (more on _that_ later too). Could Sue be the one to gain a bit of momentum and overhaul the leader?
 
-import sueSmooth from './photos/sueSmooth.jpeg'
+import sueSmooth from '@/app/(main-layout)/(posts)/2023/photos/sueSmooth.jpeg'
 
 <Image src={sueSmooth} alt='Sue looking smooth' className='my-8' />
 
@@ -97,7 +98,7 @@ Meanwhile, having throught he'd shaken off Josh after three holes, Sam had total
 
 The 2023 Milkshake Cup seemed to be turning from a game of who would win into a test of nerve to see who could not lose it. But unbeknownst to the lead group, things were progressing serenely in the middle group, with both Tom and Harry finding some quality golf in the latter stages of the afternoon.
 
-import harryTee from './photos/harryTee.jpeg'
+import harryTee from '@/app/(main-layout)/(posts)/2023/photos/harryTee.jpeg'
 
 <Image
   src={harryTee}
@@ -109,7 +110,7 @@ In the end though, Tom just couldn't find the magic required to earn his fifth (
 
 But yes! From four shots behind at the turn he'd come storming through the field to win by three! An extraordinary turnaround and the first time we've ever had a bolter from the middle group come through to lift the trophy!
 
-import theChamp from './photos/theChamp.jpeg'
+import theChamp from '@/app/(main-layout)/(posts)/2023/photos/theChamp.jpeg'
 
 <Image
   src={theChamp}
@@ -119,7 +120,7 @@ import theChamp from './photos/theChamp.jpeg'
 
 Very, very, _very_ well played Harry. We all can't wait to prise the trophy out of your hands in 2024!
 
-import leaderboard from './photos/leaderboard.png'
+import leaderboard from '@/app/(main-layout)/(posts)/2023/photos/leaderboard.png'
 
 <Image src={leaderboard} alt='The final scores' className='my-8' />
 
@@ -131,7 +132,7 @@ The 'Sticky Wicket Award' will go to the person who finds the unluckiest lie out
 
 Sue plays righty:
 
-import sueRighty from './photos/sueRighty.jpeg'
+import sueRighty from '@/app/(main-layout)/(posts)/2023/photos/sueRighty.jpeg'
 
 <Image
   src={sueRighty}
@@ -141,7 +142,7 @@ import sueRighty from './photos/sueRighty.jpeg'
 
 Alan on a detour:
 
-import alanTree from './photos/alanTree.jpeg'
+import alanTree from '@/app/(main-layout)/(posts)/2023/photos/alanTree.jpeg'
 
 <Image
   src={alanTree}
@@ -151,7 +152,7 @@ import alanTree from './photos/alanTree.jpeg'
 
 But the judge's favourite from 2023: Alistair looking for a hiding place on the 8th hole!
 
-import aliTree from './photos/aliTree.jpeg'
+import aliTree from '@/app/(main-layout)/(posts)/2023/photos/aliTree.jpeg'
 
 <Image
   src={aliTree}

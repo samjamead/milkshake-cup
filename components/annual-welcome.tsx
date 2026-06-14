@@ -1,6 +1,8 @@
-import { QuoteIcon } from 'lucide-react'
 import { StaticImport } from 'next/dist/shared/lib/get-img-props'
 import Image from 'next/image'
+
+import { QuoteIcon } from 'lucide-react'
+
 import trophy from '@/public/img/2022trophy.jpeg'
 
 export default function AnnualWelcome({
@@ -26,14 +28,14 @@ export default function AnnualWelcome({
         />
       </div>
       <div className='flex flex-1 flex-col justify-between gap-8 rounded-l-md bg-purple-300/20 p-5'>
-        <h2 className='text-xs font-bold uppercase tracking-wider lg:text-sm'>
+        <h2 className='text-xs font-bold tracking-wider uppercase lg:text-sm'>
           Welcome from the defending champion
         </h2>
         <div className='flex flex-col gap-4 pr-6'>
           <QuoteIcon className='scale-x-[-1]' />
           {children}
         </div>
-        <p className='text-sm text-foreground/80'>
+        <p className='text-foreground/80 text-sm'>
           &mdash;{name}, {year} Milkshake Cup Champion
         </p>
       </div>

@@ -1,10 +1,10 @@
-import honours from '../../../_data/honours.json'
-import spiritHonours from '../../../_data/spiritHonours.json'
+import honours from '@/data/honours.json'
+import spiritHonours from '@/data/spiritHonours.json'
 
 export default async function Index() {
   return (
     <div className='w-full py-8 lg:py-12'>
-      <div className='animate-in flex flex-col gap-4 text-foreground opacity-0 lg:gap-8'>
+      <div className='animate-in text-foreground flex flex-col gap-4 opacity-0 lg:gap-8'>
         <h1 className='mb-4 text-2xl font-bold'>Honours Board</h1>
 
         <div className='lg:mb-12'>

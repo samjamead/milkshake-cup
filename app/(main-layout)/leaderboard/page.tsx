@@ -1,13 +1,13 @@
 'use client'
 
-import { useEffect, useState, useCallback } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 type MessageRowProps = {
   message: string
 }
 
 const MessageRow = ({ message }: MessageRowProps) => (
-  <tr className='border-t border-foreground/50'>
+  <tr className='border-foreground/50 border-t'>
     <td colSpan={4} className='py-6 text-center text-sm'>
       {message}
     </td>
@@ -25,28 +25,31 @@ export default function Leaderboard() {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [isError, setIsError] = useState<boolean>(false)
 
-  const updateLeaderboard = async () => {
+  const updateLeaderboard = useCallback(async () => {
     setIsError(false)
     setIsLoading(true)
-    setTimeout(async () => {
-      try {
-        const response = await fetch(
-          'https://opensheet.elk.sh/1HHomcApRYcviI5uLXkKXPNKRs12J1InhSwwU1_bDatg/liveleader'
-        )
-        const data = await response.json()
-        setLeaderboard(data)
-      } catch (error) {
-        console.error('Error updating leaderboard:', error)
-        setIsError(true)
-      } finally {
-        setIsLoading(false)
-      }
-    }, 800)
-  }
+
+    try {
+      const response = await fetch(
+        'https://opensheet.elk.sh/1HHomcApRYcviI5uLXkKXPNKRs12J1InhSwwU1_bDatg/liveleader'
+      )
+      const data = await response.json()
+      setLeaderboard(data)
+    } catch (error) {
+      console.error('Error updating leaderboard:', error)
+      setIsError(true)
+    } finally {
+      setIsLoading(false)
+    }
+  }, [])
 
   useEffect(() => {
-    updateLeaderboard()
-  }, [])
+    const timeout = setTimeout(() => {
+      void updateLeaderboard()
+    }, 800)
+
+    return () => clearTimeout(timeout)
+  }, [updateLeaderboard])
 
   return (
     <div className='animate-in flex flex-col gap-6 py-6 lg:gap-12 lg:py-12'>
@@ -54,7 +57,7 @@ export default function Leaderboard() {
         <h2 className='text-xl font-semibold md:text-2xl'>Live Leaderboard</h2>
         <button
           type='button'
-          className='rounded border px-3 py-1 text-sm disabled:opacity-50'
+          className='rounded-sm border px-3 py-1 text-sm disabled:opacity-50'
           onClick={() => updateLeaderboard()}
           disabled={isLoading}
           aria-label='Refresh leaderboard'
@@ -63,7 +66,7 @@ export default function Leaderboard() {
         </button>
       </div>
 
-      <div className='w-full rounded-md border border-foreground/50'>
+      <div className='border-foreground/50 w-full rounded-md border'>
         <table className='w-full'>
           <thead>
             <tr>
@@ -88,7 +91,7 @@ export default function Leaderboard() {
                 .map((row, index) => (
                   <tr
                     key={row.player}
-                    className='border-t border-foreground/50'
+                    className='border-foreground/50 border-t'
                   >
                     <td className='p-3 md:pl-5'>{index + 1}</td>
                     <td className='p-3'>{row.player}</td>

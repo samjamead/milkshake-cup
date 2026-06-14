@@ -1,7 +1,8 @@
 import { Suspense } from 'react'
+
 import Loading from '@/app/loading'
-import Footer from '@/_components/footer'
-import Header from '@/_components/main-header'
+import Footer from '@/components/footer'
+import Header from '@/components/main-header'
 
 export default function RootLayout({
   children,

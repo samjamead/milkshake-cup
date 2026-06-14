@@ -6,7 +6,7 @@ export default function Loading() {
     'Lipping out a putt...',
   ]
 
-  const quip = loadingQuips[Math.floor(Math.random() * loadingQuips.length)]
+  const quip = loadingQuips[0]
 
   return (
     <div className='flex h-full min-h-svh w-full items-center justify-center'>

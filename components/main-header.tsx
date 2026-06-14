@@ -1,6 +1,7 @@
-import Link from 'next/link'
-import Nav from './nav'
 import Image from 'next/image'
+import Link from 'next/link'
+
+import Nav from '@/components/nav'
 import logoWhite from '@/public/logo_white.svg'
 
 export default function Header() {
