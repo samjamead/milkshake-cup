@@ -22,8 +22,8 @@ export const SubtitleBlock = () => {
     <div className='gap-2 border-t border-foreground/25 md:grid md:h-40 md:grid-cols-2 md:gap-0 lg:grid-cols-[3fr_2fr]'>
       <div className='border-r border-foreground/25 bg-purple-500/20 px-4 py-6 md:bg-transparent md:py-3'>
         <p className='lg:text-lg lg:font-medium'>
-          The countdown is on for the 6th of June. Waterbridge Golf Club &ndash;
-          a new course on the rotation for 2026
+          The countdown is on for the 6th of June.a Waterbridge Golf Club
+          &ndash; a new course on the rotation for 2026
         </p>
       </div>
       <ul className='border-t border-foreground/25 text-sm md:border-r md:border-t-0'>
