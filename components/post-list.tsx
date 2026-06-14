@@ -1,9 +1,9 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { PostWithBinaryDate } from '@/_utils/types'
+import { PostWithBinaryDate } from '@/lib/types'
 import Link from 'next/link'
-import Quote from './quote'
+import Quote from '@/components/quote'
 import { useSearchParams } from 'next/navigation'
 import { ArrowUpRight } from 'lucide-react'
 import * as d3 from 'd3'

@@ -4,8 +4,8 @@ export const metadata = {
   category: 'Writeups',
 }
 
-import PostHero from '@/_components/post-hero'
-import HandicapTable from './handicap-table'
+import PostHero from '@/components/post-hero'
+import HandicapTable from '@/app/(main-layout)/(posts)/2024/handicap-table'
 import Image from 'next/image'
 
 <PostHero metadata={metadata} />
@@ -16,7 +16,7 @@ In the words of defending champion Harry P. Langdon:
 
 import AnnualWelcome from '@/components/annual-welcome'
 
-import defendingChamp from '../2023/photos/theChamp.jpeg'
+import defendingChamp from '@/app/(main-layout)/(posts)/2023/photos/theChamp.jpeg'
 
 <AnnualWelcome name='Harry Langdon' year='2024' image={defendingChamp}>
   The Milkshake Cup has shown each year that it can only be won by the person
@@ -39,7 +39,7 @@ But before we get into all that, let us rewind to our second entry to Lions Day.
 
 Well, believe it or not, I wrote all that 11 months ago! But it doesn't look like I got very far, and now I have no idea what else I was going to write. I'm sure it was an excellent story! And just look how beautiful we all looked on the first tee:
 
-import lions from './photos/lions.jpeg'
+import lions from '@/app/(main-layout)/(posts)/2024/photos/lions.jpeg'
 
 <Image
   className='my-8'
@@ -49,7 +49,7 @@ import lions from './photos/lions.jpeg'
 
 Alas no repeat of the previous year's fireworks, but Tom very nearly drove the green on the 18th, if only it has bounced on the other side of the fence! In any case it whet the appetite for a shootout the following day, and Walshy was ceremoniously inducted into the Milkshake Cup group for all eternity!
 
-import ampleforth from './photos/PHOTO-2024-09-10-20-01-23 3.jpg'
+import ampleforth from '@/app/(main-layout)/(posts)/2024/photos/PHOTO-2024-09-10-20-01-23 3.jpg'
 
 <Image
   className='my-8'

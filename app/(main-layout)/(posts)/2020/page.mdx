@@ -4,8 +4,8 @@ export const metadata = {
   category: 'Writeups',
 }
 
-import PostHero from '@/_components/post-hero'
-import AnnualWelcome from '@/_components/annual-welcome'
+import PostHero from '@/components/post-hero'
+import AnnualWelcome from '@/components/annual-welcome'
 import Image from 'next/image'
 
 export function ImageWithCaption({ src, caption }) {
@@ -19,11 +19,11 @@ export function ImageWithCaption({ src, caption }) {
 
 <PostHero metadata={metadata} />
 
-import tc2 from './photos/tc2.jpeg'
+import tc2 from '@/app/(main-layout)/(posts)/2020/photos/tc2.jpeg'
 
 ## 2020: The Socially-distanced Edition
 
-import teamShot from './photos/teamShot.jpg'
+import teamShot from '@/app/(main-layout)/(posts)/2020/photos/teamShot.jpg'
 
 <ImageWithCaption src={teamShot} caption='A mid-pandemic golf competition' />
 
@@ -37,13 +37,13 @@ Unprecedented challenges looked sure to blight the organisation of the biggest g
 
 Of course, we now know that all three of these fears were proven unnecessary! With overcast skies threatening rain, the intrepid Milkshake Cuppers gathered around the practice green. New for 2020, the redoubtable Stuart was recruited as the honorary starter, and welcomed the defending champion to the tee as only Stuart can.
 
-import firstTee from './photos/firstTee.jpeg'
+import firstTee from '@/app/(main-layout)/(posts)/2020/photos/firstTee.jpeg'
 
 <ImageWithCaption src={firstTee} caption='Surely not this bloke again?' />
 
 With some cutting remarks about the defending champ's swing, and a reminder to replace divots, repair pitchmarks, and to please avoid slow play, the 2020 championships were under way!
 
-import noPressure from './photos/noPressure.jpg'
+import noPressure from '@/app/(main-layout)/(posts)/2020/photos/noPressure.jpg'
 
 <ImageWithCaption src={noPressure} caption='Fore right!' />
 
@@ -55,7 +55,7 @@ With one foe out of the way, the golf was cagey in the opening round. Nobody loo
 
 At lunch, the rumours whipped around the gallery — the clubhouse leader was not from Yorkshire! In fact, the clubhouse leader was a founding member of the famous trophy, and had carefully plotted his way around the WGA, producing the round of his life. Samuel Smith had emerged from the pack to take a commanding 2 shot lead over the field!
 
-import chance from './photos/chance.jpg'
+import chance from '@/app/(main-layout)/(posts)/2020/photos/chance.jpg'
 
 <ImageWithCaption
   src={chance}
@@ -64,7 +64,7 @@ import chance from './photos/chance.jpg'
 
 Things started well on the back 9 for the defending champion. Taking his own advice from years gone by, aggressive chipping saw TC get up and down for par at the first, second, and third holes. Perennial runner up Sam got on a run, with a couple of birdies temporarily closing the gap to the leader. Harry kept his powder dry, playing steady golf, and waiting for the opportunity to strike.
 
-import birdiePut from './photos/birdiePut.jpg'
+import birdiePut from '@/app/(main-layout)/(posts)/2020/photos/birdiePut.jpg'
 
 <ImageWithCaption
   src={birdiePut}
@@ -83,21 +83,21 @@ We couldn't have asked for a more deserving champion: calm under pressure, magna
 
 Congratulations Samuel, enjoy playing off scratch next year!
 
-import handshake from './photos/handshake.jpg'
+import handshake from '@/app/(main-layout)/(posts)/2020/photos/handshake.jpg'
 
 <ImageWithCaption src={handshake} caption='Smiles all round!' />
 
-import champ from './photos/champ.jpeg'
+import champ from '@/app/(main-layout)/(posts)/2020/photos/champ.jpeg'
 
 <ImageWithCaption src={champ} caption='The most handsome champion to date' />
 
-import champ2 from './photos/champ2.jpg'
+import champ2 from '@/app/(main-layout)/(posts)/2020/photos/champ2.jpg'
 
 <ImageWithCaption
   src={champ2}
   caption='The welcome home committee was most impressed'
 />
 
-import scores from './photos/scores.jpeg'
+import scores from '@/app/(main-layout)/(posts)/2020/photos/scores.jpeg'
 
 <ImageWithCaption src={scores} caption="Who doesn't love the data" />

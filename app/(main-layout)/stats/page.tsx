@@ -1,7 +1,7 @@
 'use client'
 
-import stats from '../../../_data/stats.json'
-import scores2025 from '../../../_data/2025-scores.json'
+import stats from '@/data/stats.json'
+import scores2025 from '@/data/2025-scores.json'
 import * as d3 from 'd3'
 
 export default function Page() {

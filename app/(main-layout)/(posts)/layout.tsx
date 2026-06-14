@@ -1,4 +1,4 @@
-import './posts.css'
+import '@/app/(main-layout)/(posts)/posts.css'
 
 export default function Layout({
   children,
